@@ -6,37 +6,41 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>Trang chủ Góc tâm sự - Lắng nghe những sẻ chia</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" media="all" href="css/homestyle.css"  />
-		<link rel="shortcut icon" href="image/logo.png"  />
-    <script language="javascript" src="javascript/slide.js"></script>
-    <link rel="stylesheet"href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-		<script src="//code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-    <link rel="stylesheet" type="text/css" media="all" href="style.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="css/containtSliders.css" />   
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-    <script src="javascript/containtSliders.js"></script>
-    <script src="javascript/jquery-ui-1.7.2.custom.min.js"></script>
-    <link rel="stylesheet" type="text/css" media="all" href="css/signupStyle.css" /> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" media="all" href="css/homestyle.css"  />
+  <link rel="shortcut icon" href="images/logo.png"  />
+  <script language="javascript" src="javascript/slide.js"></script>
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <link rel="stylesheet" type="text/css" media="all" href="css/containtSliders.css" />   
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+  <script src="javascripts/containtSliders.js"></script>
+  <script src="javascripts/jquery-ui-1.7.2.custom.min.js"></script>
+  <link rel="stylesheet" type="text/css" media="all" href="css/reset.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="css/signupStyle.css" /> 
 </head>
 
 <body>
     <!--Header-->
     <header>
-      <a href="index.php"><img class="logo" src="image/logo.png" alt="logo" width="78px" height="78px" /></a>	
+      <a href="index.php"><img class="logo" src="images/logo.png" alt="logo" width="82px" height="82px" /></a>	
       <?php
 				if(isset($_SESSION['user_curr']))
 				{
-					echo "Chào mừng: ".$_SESSION['user_curr']."";
-					echo '<a href="logout.php">Đăng xuất</a>';
+					print<<<EOP
+					<form class = "loginOk" method="post" action="">
+						<p style="font-size:15px;color:white;">{$_SESSION['name']}</p>
+						<br />					
+					<a href="logout.php" style="font-size:15px;color:red;centre;text-decoration:none;">Đăng xuất</a>
+					</form>
+EOP;
 				}
 				else
 				{
 					print<<<EOP
 						<form class="loginForm" method="post" action="checkLogin.php">
-							<input type="type" class="styleBox" name="userLogin" placeholder="Tên đăng nhập"/>
-							<input type="password" class="styleBox" name="passLogin" placeholder="Mật khẩu" />
+							<input type="type" class="styleBox" name="userLogin" placeholder="Tên đăng nhập" required/>
+							<input type="password" class="styleBox" name="passLogin" placeholder="Mật khẩu" required/>
 							<input type="submit" class="submitButton" style="border-radius:5px 5px 5px 5px;width:100px;height:30px;" name="button_Login" value="Đăng nhập"/>
 							<br />
 						<a href="#signupAcc" style="padding-left:350px;font-size:15px;color:white;">Đăng ký</a>
@@ -125,61 +129,63 @@ EOP;
   </div><!--End #body-->
   
   <div class="underDiv"> <!-- Phần thân trang --> 
-          <a href="#yourSpace" name="yourSpace" style="text-decoration:none;outline:none"><h1 style="color:#FFF">Góc của bạn</h1></a>
-          <br />
-          <div id="giadinh"><a href="giadinh.html"><img src="image/chuyenmuc.jpg" /></a></div>
-          <div id="tinhyeu"><a href="tinhyeu.html"><img src="image/chuyenmuc.jpg" /></a></div>
-          <div id="tinhban"><a href="tinhban.html"><img src="image/chuyenmuc.jpg" /></a></div>
-          <div id="hoctap"><a href="hoctap.html"><img src="image/chuyenmuc.jpg" /></a></div>
-          <div id="xahoi"><a href="xahoi.html"><img src="image/chuyenmuc.jpg" /></a></div>
-          <div id="thamkin"><a href="thamkin.html"><img src="image/chuyenmuc.jpg" /></a></div>
+    <br /><br />
+    <p style="width:150px;"><a href="#yourSpace" name="yourSpace" style="text-decoration:none;outline:none;color:#007CB9;"><h1 style="color:#FFF">Góc của bạn</h1></a>
+    <br />
+    </p>
+    <div id="giadinh"><a href="giadinh.html"><img src="images/chuyenmuc.jpg" /></a></div>
+    <div id="tinhyeu"><a href="tinhyeu.html"><img src="images/chuyenmuc.jpg" /></a></div>
+    <div id="tinhban"><a href="tinhban.html"><img src="images/chuyenmuc.jpg" /></a></div>
+    <div id="hoctap"><a href="hoctap.html"><img src="images/chuyenmuc.jpg" /></a></div>
+    <div id="xahoi"><a href="xahoi.html"><img src="images/chuyenmuc.jpg" /></a></div>
+    <div id="thamkin"><a href="thamkin.html"><img src="images/chuyenmuc.jpg" /></a></div>
   </div>
   
-  	<div align="center">
-    	<a name="signupAcc"></a>
-    	<?php
-				if(!isset($_SESSION['user_curr']))
-				{
-					print<<<EOP
-					<form method="post" action="registerPage.php" id="msform">
-						<ul id="progressbar">
-							<li class="active" style="font-size:17px;font-weight:700">Tài Khoản</li>
-								<li style="font-size:17px;font-weight:700">Email</li>
-								<li style="font-size:17px;font-weight:700">Thông Tin</li>
-						</ul>
-						<fieldset>
-						<h2 class="fs-title">ĐĂNG KÝ THÀNH VIÊN</h2>
-						<input type="text" name="username" placeholder="Tài khoản" />
-						<input type="password" name="password" placeholder="Mật khẩu"  />
-						<input type="password" name="rePassword" placeholder="Nhập lại mật khẩu"  />
-						<input type="button" name="next" class="next action-button" value="Tiếp theo" />
-						</fieldset>
-						<fieldset>
-						<h2 class="fs-title"></h2>
-						<input type="text" name="email" placeholder="Email"  />
-						<input type="text" name="facebook" placeholder="Facebook"  />
-						<input type="text" name="gplus" placeholder="Google Plus"  />
-						<input type="button" name="previous" class="previous action-button" value="Quay lại" />
-						<input type="button" name="next" class="next action-button" value="Tiếp theo" />
-						</fieldset>
-						<fieldset>
-						<h2 class="fs-title">Thông tin cá nhân</h2>
-						<input type="text" name="name" placeholder="Họ tên"/>
-						<input type="date" name="birthday" placeholder="Ngày sinh"/>
-						<input type="text" name="phone" placeholder="Số điện thoại"  />
-						<input type="button" name="previous" class="previous action-button" value="Quay lại" />
-						<input type="submit" name="next" class="submit action-button" value="Hoàn tất" />
-						</fieldset>
-					</form>
+	<?php
+    if(!isset($_SESSION['user_curr']))
+    {
+      print<<<EOP
+    <div align="center" style="padding-bottom:400px;">
+      <a name="signupAcc"></a>
+      <form method="post" action="registerPage.php" id="msform">
+        <ul id="progressbar">
+          <li class="active" style="font-size:17px;font-weight:700">THÔNG TIN</li>
+            <li style="font-size:17px;font-weight:700">LIÊN HỆ</li>
+            <li style="font-size:17px;font-weight:700">TÀI KHOẢN</li>
+        </ul>
+        
+        <fieldset>
+        <h2 class="fs-title">Thông tin cá nhân</h2>
+        <input type="text" name="name" placeholder="Họ tên"/>
+        <input type="date" name="birthday" placeholder="Ngày sinh"/>
+        <input type="text" name="phone" placeholder="Số điện thoại"  />
+        <input type="button" name="next" class="next action-button" value="Tiếp theo" />
+        </fieldset>
+        <fieldset>
+        <h2 class="fs-title">Địa chỉ liên hệ</h2>
+        <input type="email" name="email" placeholder="Email" />
+        <input type="text" name="facebook" placeholder="Facebook"  />
+        <input type="text" name="gplus" placeholder="Google Plus"  />
+        <input type="button" name="previous" class="previous action-button" value="Quay lại" />
+        <input type="button" name="next" class="next action-button" value="Tiếp theo" />
+        </fieldset>
+        <fieldset>
+        <h2 class="fs-title">Thiết lập tài khoản</h2>
+        <input type="text" name="username" placeholder="Tài khoản" required />
+        <input type="password" name="password" placeholder="Mật khẩu" required />
+        <input type="password" name="rePassword" placeholder="Nhập lại mật khẩu" required />
+        <input type="button" name="previous" class="previous action-button" value="Quay lại" />
+        <input type="submit" name="next" class="submit action-button" value="Hoàn tất" />
+        </fieldset>
+      </form>
+    </div>
 EOP;
-				}
-				
-			?>
+    }
+  ?>
     <!-- jQuery -->
     
     <!-- jQuery easing plugin -->
     <script src="jquery.easing.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="javascript/multiSignupScript.js"></script>
-	</div>
+    <script type="text/javascript" src="javascripts/multiSignupScript.js"></script>
 </body>
 </html>

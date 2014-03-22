@@ -17,7 +17,8 @@ EOP;
 		{
 			$row_curr = mysql_fetch_array($query);
 			session_start();
-			$_SESSION['user_curr'] = $_POST['userLogin'];
+			$_SESSION['user_curr'] = $row_curr['taikhoan'];
+			$_SESSION['name'] = $row_curr['ten'];
 			header('Location: index.php');
 			print<<<EOP
 				Đăng nhập thành công!
