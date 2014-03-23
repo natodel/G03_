@@ -4,7 +4,7 @@
 		require_once('config.php');
 		$u = $_POST['userLogin'];
 		$p = md5($_POST['passLogin']);
-		$refe = "SELECT * FROM members WHERE taikhoan='".$u."' and matkhau='".$p."'";
+		$refe = "SELECT * FROM members WHERE account='".$u."' and password='".$p."'";
 		$query = mysql_query($refe);
 		if(mysql_num_rows($query) == 0)
 		{
@@ -17,8 +17,8 @@ EOP;
 		{
 			$row_curr = mysql_fetch_array($query);
 			session_start();
-			$_SESSION['user_curr'] = $row_curr['taikhoan'];
-			$_SESSION['name'] = $row_curr['ten'];
+			$_SESSION['user_curr'] = $row_curr['account'];
+			$_SESSION['name'] = $row_curr['name'];
 			header('Location: index.php');
 			print<<<EOP
 				Đăng nhập thành công!

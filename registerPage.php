@@ -26,7 +26,7 @@
 		exit;
 	}
 	
-	if(mysql_num_rows(mysql_query("SELECT taikhoan FROM members WHERE taikhoan='$username'")) > 0)
+	if(mysql_num_rows(mysql_query("SELECT account FROM members WHERE account='$username'")) > 0)
 	{
 		print "Tài khoản đã có người dùng <a href='index.php'> Nhấn vào đây để nhập lại </a>";
 		exit;
@@ -39,7 +39,7 @@
 		exit;
 	}
 	//Creat new account
-	$new_acc = mysql_query("INSERT INTO members(taikhoan, matkhau, ten, email, phone) VALUES ('$username', '$password', '$name', '$email', '$phone')");
+	$new_acc = mysql_query("INSERT INTO members(level, account, password, name, email, phone) VALUES (2, '$username', '$password', '$name', '$email', '$phone')");
 
 	if($new_acc) 
 	{
