@@ -23,7 +23,7 @@
 <body>
     <!--Header-->
     <header>
-      <a href="index.php"><img class="logo" src="images/logo.png" alt="logo" title="Trang chủ Góc sẻ chia" width="82px" height="82px" /></a>
+      <a href="index.php"><img class="logo" src="images/logo.png" alt="logo" title="Trang chủ Góc sẻ chia" width="82px" height="82px" /></a>	
       <?php
 				if(isset($_SESSION['user_curr']))
 				{
@@ -48,11 +48,9 @@ EOP;
 EOP;
 				}
 			?>
-      
   </header>
-   
   <hr size="5px" noshade color="#CCCCCC" />
-   
+      
 	<div id="body">
     <div id="featured" >
         <!--==========THUMBNAIL SHOWCASE==========-->
@@ -130,63 +128,124 @@ EOP;
   </div><!--End #body-->
   
   <div class="underDiv"> <!-- Phần thân trang --> 
-    <br /><br />
-    <p style="width:150px;"><a href="#yourSpace" name="yourSpace" style="text-decoration:none;outline:none;color:#007CB9;"><h1 style="color:#FFF">Góc của bạn</h1></a>
-    <br />
-    </p>
-    <div id="giadinh"><a href="giadinh.html"><img src="images/chuyenmuc.jpg" /></a></div>
-    <div id="tinhyeu"><a href="tinhyeu.html"><img src="images/chuyenmuc.jpg" /></a></div>
-    <div id="tinhban"><a href="tinhban.html"><img src="images/chuyenmuc.jpg" /></a></div>
-    <div id="hoctap"><a href="hoctap.html"><img src="images/chuyenmuc.jpg" /></a></div>
-    <div id="xahoi"><a href="xahoi.html"><img src="images/chuyenmuc.jpg" /></a></div>
-    <div id="thamkin"><a href="thamkin.html"><img src="images/chuyenmuc.jpg" /></a></div>
-  </div>
-  
-	<?php
-    if(!isset($_SESSION['user_curr']))
-    {
-      print<<<EOP
-    <div align="center" style="padding-bottom:400px;">
-      <a name="signupAcc"></a>
-      <form method="post" action="registerPage.php" id="msform">
-        <ul id="progressbar">
-          <li class="active" style="font-size:17px;font-weight:700">THÔNG TIN</li>
-            <li style="font-size:17px;font-weight:700">LIÊN HỆ</li>
-            <li style="font-size:17px;font-weight:700">TÀI KHOẢN</li>
-        </ul>
-        
-        <fieldset>
-        <h2 class="fs-title">Thông tin cá nhân</h2>
-        <input type="text" name="name" placeholder="Họ tên"/>
-        <input type="date" name="birthday" placeholder="Ngày sinh"/>
-        <input type="text" name="phone" placeholder="Số điện thoại"  />
-        <input type="button" name="next" class="next action-button" value="Tiếp theo" />
-        </fieldset>
-        <fieldset>
-        <h2 class="fs-title">Địa chỉ liên hệ</h2>
-        <input type="email" name="email" placeholder="Email" />
-        <input type="text" name="facebook" placeholder="Facebook"  />
-        <input type="text" name="gplus" placeholder="Google Plus"  />
-        <input type="button" name="previous" class="previous action-button" value="Quay lại" />
-        <input type="button" name="next" class="next action-button" value="Tiếp theo" />
-        </fieldset>
-        <fieldset>
-        <h2 class="fs-title">Thiết lập tài khoản</h2>
-        <input type="text" name="username" placeholder="Tài khoản" required />
-        <input type="password" name="password" placeholder="Mật khẩu" required />
-        <input type="password" name="rePassword" placeholder="Nhập lại mật khẩu" required />
-        <input type="button" name="previous" class="previous action-button" value="Quay lại" />
-        <input type="submit" name="next" class="submit action-button" value="Hoàn tất" />
-        </fieldset>
-      </form>
+    <p style="width:150px;"><a href="#yourSpace" name="yourSpace" style="text-decoration:none;outline:none;color:#090;font-size:40px;font-weight:700;"><p>Góc của bạn</p></a>
+		<div id="mainwrapper">
+      <!-- Image Caption 2 -->
+      <a href="giadinh.php">
+      <div id="box-2" class="box">
+        <img id="image-2" src="images/2.jpg"/>
+        <span class="caption full-caption">
+          <h3>Gia đình</h3>
+          <p>Lắng nghe những sẻ chia sẻ những mâu thuẫn trong hôn nhân,gia đình, những bận tâm về con cái.v.v.
+          để cùng nhau vượt qua và xây dựng cuộc sống gia đình hạnh phúc.</p>
+        </span>
+      </div>
+      </a>
+      <!-- Image Caption 3 -->
+      <a href="tinhyeu.php">
+      <div id="box-3" class="box">
+      <img id="image-3" src="images/3.jpg"/>
+      <span class="caption fade-caption">
+        <h3>Tình yêu</h3>
+        <p>Bạn chưa yêu? Đang yêu? Hay đã từng thất bại trong chuyện tình cảm?
+        Hãy cùng sẻ chia những kinh nghiệm để có một tình yêu đẹp đẽ hơn.</p>
+      </span>
+      </div>
+      </a>
+      <!-- Image Caption 4 -->
+      <a href="tinhban.php">
+      <div id="box-4" class="box">
+      <img id="image-4" src="images/4.jpg"/>
+      <span class="caption slide-caption">
+        <h3>Tình bạn</h3>
+        <p>Bạn đang cô đơn? Đang cần có 1 người bạn để chia sẻ? Hay có những vướng mắc, xung đột trong tình cảm bạn bè?
+        Hãy cùng kết bạn và sẻ chia những kinh nghiệm quý báu để luôn có một tình bạn đẹp trong cuộc sống.</p>
+      </span>
+      </div>
+      </a>
+      <!-- Image Caption 5 -->
+      <a href="hoctapcongviec.php">
+      <div id="box-5" class="box">
+      <div class="rotate">
+      <img id="image-5" src="images/5.jpg"/>
+      <span class="caption rotate-caption">
+        <h3>Học tập - Công việc</h3>
+        <p>Bạn đang thất vọng khi kết quả học tập, hay việc thi cử không được như mong muốn? 
+        Bạn cần được sẻ chia về kinh nghiệm học tập. Cùng giúp đỡ nhau để không còn phải đau đầu về những vướng bận đó nữa nhé.  .</p>
+      </span>
+      </div>
+      </div>
+      </a>
+      <!-- Image Caption 6 -->
+      <a href="thamkin.php">
+      <div id="box-6" class="box">
+      <img id="image-6" src="images/6.jpg"/>
+      <span class="caption scale-caption">
+        <h3>Thầm kín</h3>
+        <p>Bạn có những tâm sự khó nói không thể bày tỏ cùng ai? Bạn mong muốn được lắng nghe những sẻ chia của mọi người. 
+        Hãy đến chuyên mục &quot;Thầm kín&quot; của Gocsechia để giải tỏa hết những điều muốn nói! </p>
+      </span>
+      </div>
+      </a>
+      <!-- Image Caption 1 -->
+      <a href="#">
+      <div id="box-1" class="box">
+        <img id="image-1" src="images/1.jpg"/>
+          <span class="caption simple-caption">
+            <p>Giải trí - thư giãn</p>
+          </span>
+      </div>
+      </a>
     </div>
+  </div>
+  <br />
+
+    <?php
+      if(!isset($_SESSION['user_curr']))
+      {
+        print<<<EOP
+			<div id="signupDiv" align="center" style="padding-bottom:400px;">
+    		<a name="signupAcc"></a>
+        <form method="post" action="registerPage.php" id="msform">
+          <ul id="progressbar">
+            <li class="active" style="font-size:17px;font-weight:700">THÔNG TIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+              <li style="font-size:17px;font-weight:700">LIÊN HỆ</li>
+              <li style="font-size:17px;font-weight:700">TÀI KHOẢN</li>
+          </ul>
+          
+          <fieldset>
+          <h2 class="fs-title">Thông tin cá nhân</h2>
+          <input type="text" name="name" placeholder="Họ tên"/>
+          <input type="date" name="birthday" placeholder="Ngày sinh"/>
+          <input type="text" name="phone" placeholder="Số điện thoại"  />
+          <input type="button" name="next" class="next action-button" value="Tiếp theo" />
+          </fieldset>
+          <fieldset>
+          <h2 class="fs-title">Địa chỉ liên hệ</h2>
+          <input type="email" name="email" placeholder="Email" />
+          <input type="text" name="facebook" placeholder="Facebook"  />
+          <input type="text" name="gplus" placeholder="Google Plus"  />
+          <input type="button" name="previous" class="previous action-button" value="Quay lại" />
+          <input type="button" name="next" class="next action-button" value="Tiếp theo" />
+          </fieldset>
+          <fieldset>
+          <h2 class="fs-title">Thiết lập tài khoản</h2>
+          <input type="text" name="username" placeholder="Tài khoản" required />
+          <input type="password" name="password" placeholder="Mật khẩu" required />
+          <input type="password" name="rePassword" placeholder="Nhập lại mật khẩu" required />
+          <input type="button" name="previous" class="previous action-button" value="Quay lại" />
+          <input type="submit" name="next" class="submit action-button" value="Hoàn tất" />
+          </fieldset>
+        </form>
+			</div>
 EOP;
-    }
-  ?>
-    <!-- jQuery -->
-    
-    <!-- jQuery easing plugin -->
-    <script src="jquery.easing.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="javascripts/multiSignupScript.js"></script>
+      }
+      
+    ?>
+  <!-- jQuery -->
+  
+  <!-- jQuery easing plugin -->
+  <script src="jquery.easing.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="javascripts/multiSignupScript.js"></script>
 </body>
 </html>

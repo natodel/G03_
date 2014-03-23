@@ -44,7 +44,6 @@ header{
 .logo{
 	margin-left:150px;
 	margin-top:8px;
-	margin:auto;
 }
 
 .styleBox{
@@ -74,7 +73,7 @@ header{
 	}
 .underDiv{
 	width:1080px;
-	min-height:700px;
+	min-height:660px;
 	padding:15px 0px;
 	margin:auto;
 	}
