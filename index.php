@@ -30,8 +30,8 @@
 					print<<<EOP
 					<form class = "loginOk" method="post" action="">
 						<p style="font-size:15px;color:white;">{$_SESSION['name']}</p>
-						<br />					
-					<a href="logout.php" style="font-size:15px;color:red;centre;text-decoration:none;">Đăng xuất</a>
+						<a href="logout.php" style="font-size:18px;color:red;centre;text-decoration:none;">Đăng xuất</a><br/>
+						<a href="changeaccount1.php" style="font-size:15px;color:green;centre;text-decoration:none;">Thay đổi thông tin tài khoản</a>
 					</form>
 EOP;
 				}
@@ -208,7 +208,7 @@ EOP;
     		<a name="signupAcc"></a>
         <form method="post" action="registerPage.php" id="msform">
           <ul id="progressbar">
-            <li class="active" style="font-size:17px;font-weight:700">THÔNG TIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+            <li class="active" style="font-size:17px;font-weight:700">THÔNG TIN</li>
               <li style="font-size:17px;font-weight:700">LIÊN HỆ</li>
               <li style="font-size:17px;font-weight:700">TÀI KHOẢN</li>
           </ul>

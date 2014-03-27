@@ -9,7 +9,7 @@
 		if(mysql_num_rows($query) == 0)
 		{
 			print <<<EOP
-				Không tồn tại tài khoản <br>
+				Sai thông tin <br>
 				<a href="index.php">Nhấn vào đây để đăng nhập lại</a>
 EOP;
 		}
@@ -19,11 +19,16 @@ EOP;
 			session_start();
 			$_SESSION['user_curr'] = $row_curr['account'];
 			$_SESSION['name'] = $row_curr['name'];
-			header('Location: index.php');
-			print<<<EOP
-				Đăng nhập thành công!
-				<a href="index.php">Nhấn vào đây để vào trang chủ</a>
-EOP;
+			$_SESSION['level'] = $row_curr['level'];
+			if($_SESSION['level'] == 2)
+			{
+				header('Location: index.php');
+				exit();
+			}
+			else
+			{
+				//page admin
+			}
 		}
 	}
 	else

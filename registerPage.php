@@ -16,26 +16,26 @@
 	//check information
 	if( !$username || !$_POST['password'] || !$name || !$email)
 	{
-		print "Thông tin sai! <a href='index.php'> Nhấn vào đây để nhập lại </a>";
+		print "Thông tin thiếu! <a href='javascript:history.go(-1)'> Nhấn vào đây để nhập lại </a>";
 		exit;
 	}
 	
 	if($password != $repassword)
 	{
-		print "Mật khẩu không khớp <a href='index.php'> Nhấn vào đây để nhập lại </a>";
+		print "Mật khẩu không khớp <a href='javascript:history.go(-1)'> Nhấn vào đây để nhập lại </a>";
 		exit;
 	}
 	
 	if(mysql_num_rows(mysql_query("SELECT account FROM members WHERE account='$username'")) > 0)
 	{
-		print "Tài khoản đã có người dùng <a href='index.php'> Nhấn vào đây để nhập lại </a>";
+		print "Tài khoản đã có người dùng <a href='javascript:history.go(-1)'> Nhấn vào đây để nhập lại </a>";
 		exit;
 	}
 	
 	//Check email
 	if(!check_email($email))
 	{
-		print "Email không hợp lệ <a href='index.php'> Nhấn vào đây để nhập lại </a>";
+		print "Email không hợp lệ <a href='javascript:history.go(-1)'> Nhấn vào đây để nhập lại </a>";
 		exit;
 	}
 	//Creat new account
@@ -43,9 +43,13 @@
 
 	if($new_acc) 
 	{
-		print "Tài khoản {$username} đã được tạo <a href='index.php'> Đăng nhập</a>";
+		print <<<EOP
+		Chào mừng thành viên mới: {$username}!!!!! <br/>
+		<a href='index.php'> Đăng nhập</a>
+EOP;
 	}
 	else{
 		 print "Xảy ra lỗi";
+		 print "<a href='javascript:history.go(-1)'> Quay về trang chủ</a>";
 	}
 ?>
