@@ -25,8 +25,8 @@
    <hr size="5px" noshade color="#CCCCCC" />
     </header>
     <div align="center">
-  		<h1>Thay đổi tài khoản thành công!</h1>
-    	<p style="font-weight:600;font-size:18px">Sẽ tự động chuyển tới <a href="index.php">Trang chủ</a> sau <span id='time' style="color:#CF0"> </span> s </p>
+  		<h1 style="color:green;">Thay đổi tài khoản thành công!</h1>
+    	<p style="font-weight:600;font-size:18px" >Sẽ tự động chuyển tới <a href="index.php">Trang chủ</a> sau <span id='time' style="color:#CF0"> </span> s </p>
   </div>
 </body>
 </html>
