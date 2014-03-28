@@ -2,8 +2,7 @@
 
 <?php
 	session_start();
-	@mysql_connect("localhost", "root", "") or die ('Can not connect to host');
-	@mysql_select_db("data_userweb");
+	require_once("config.php");
 	$user_curr = $_SESSION['user_curr'];
 	$refer = "select * from members where account='".$user_curr."'";
 	$query = mysql_query($refer);
@@ -50,7 +49,7 @@
 		if($update)
 		{
 			$_SESSION['name'] = $name;
-			header('Location: index.php');
+			header('Location: changeAccSuccess.php');
 		}
 		else echo "Xảy ra lỗi";
 	}
@@ -59,4 +58,5 @@
 		echo "Mật khậu hiện thời của bạn không chính xác";
 		echo "<a href='javascript:history.go(-1)'>Quay về</a>";
 	}
+	
 ?>
