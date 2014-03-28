@@ -128,7 +128,7 @@ EOP;
   </div><!--End #body-->
   
   <div class="underDiv"> <!-- Phần thân trang --> 
-    <p style="width:150px;"><a href="#yourSpace" name="yourSpace" style="text-decoration:none;outline:none;color:#090;font-size:40px;font-weight:700;"><p>Góc của bạn</p></a>
+    <p style="width:150px;"><a href="#yourSpace" name="yourSpace" style="text-decoration:none;outline:none;color:#090;font-size:40px;font-weight:700;"><p>Diễn đàn</p></a>
 		<div id="mainwrapper">
       <!-- Image Caption 2 -->
       <a href="giadinh.php">

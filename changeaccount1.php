@@ -2,8 +2,7 @@
 <h1>Thông tin hiện tại của bạn</h1>
 <?php
 	session_start();
-	@mysql_connect("localhost", "root", "") or die ('Can not connect to host');
-	@mysql_select_db("data_userweb");
+	require_once('config.php');
 	$user_curr = $_SESSION['user_curr'];
 	$refer = "select * from members where account='".$user_curr."'";
 	$query = mysql_query($refer);

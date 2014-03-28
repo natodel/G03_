@@ -10,6 +10,7 @@
 	$username = addslashes($_POST['username']);
 	$password = md5(addslashes($_POST['password']));
 	$repassword = md5(addslashes($_POST['rePassword']));
+	$password_test = addslashes($_POST['password']);
 	$name = addslashes($_POST['name']);
 	$email = addslashes($_POST['email']);
 	$phone = addslashes($_POST['phone']);
@@ -23,6 +24,18 @@
 	if($password != $repassword)
 	{
 		print "Mật khẩu không khớp <a href='javascript:history.go(-1)'> Nhấn vào đây để nhập lại </a>";
+		exit;
+	}
+	
+	if(strlen($username) < 4)
+	{
+		print "Tên tài khoản quá ngắn <a href='javascript:history.go(-1)'> Nhấn vào đây để nhập lại </a>";
+		exit;
+	}
+	
+	if(strlen($password_test) < 7)
+	{
+		print "Mật khẩu không an toàn <a href='javascript:history.go(-1)'> Nhấn vào đây để nhập lại </a>";
 		exit;
 	}
 	
