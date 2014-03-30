@@ -1,6 +1,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
-	//init user
+	//connect to database
 	$db_host = "localhost";
 	$db_user = "root";
 	$db_pass = '';
