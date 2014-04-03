@@ -14,33 +14,43 @@
 <div class="header" style="background-color: #0FF">
  <a href="index.php" ><img class="logo" src="images/logo.png"  alt="logo" title="Trang chủ Góc sẻ chia" width="82px" height="82px" /></a>
 </div>
-<h1> Thông tin người dùng</h1>
-
-	<table >
-    <div class="basicinfo">
+<div class="basicinfo">
+   <div class="profilepicture>
+    	<a href="#"><img src="#"></a>
+  </div>
+  <table>
 	  <tr>
 		<th scope="user name">Tên đăng nhập</th>
-		<td width=100px>#</td>
-		<th scope="joinedday"> Ngày tham gia</th>
-		<td width= 90> #</td>
+		<td>#</td>
 	  </tr>
+      <tr>
+      	<th scope="joinedday"> Ngày tham gia</th>
+		<td> #</td>
+      </tr>
 	  <tr>
 		<th scope="gender">Giới tính</th>
-		<td width= 40px>#</td>
+		<td >#</td>
 	  </tr>
 	  <tr>
 		<th scope="dateofbirth">Ngày sinh</th>
-		<td width= 80px>#</td>
+		<td >#</td>
 	  </tr>
 	  <tr>
 		<th scope="email">Email đăng kí</th>
 		<td>#</td>
 	  </tr>
-      </div>
-	</table>
-
-
-<div class="changeinfo"> 
-<a href="changeaccount1.php"> Sửa đổi thông tin</a></div>
+  	</table>
+ </div>
+<form class="changeinfo"  id="changeinfo" method="post" action="changeaccount1.php">
+  <blockquote>
+    <p>
+      <input type="submit" id="info" name="info" value="change infomation" title="Sửa đổi thông tin" />
+    </p>
+  </blockquote>
+</form>
+<div class="topic">
+	<ul> topic1</ul>
+    <ul> topic1</ul>
+</div> 
 </body>
 </html>

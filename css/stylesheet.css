@@ -11,11 +11,4 @@ td{
     width: 200px;
 }
 .changeinfo{
-	border-radius: 5px;
-	border: groove 2px solid #6495ED;
-	background-color: #BCD2EE;
-	height: 20px;
-	width: 120px;
-	margin: auto;
-	text-align: center;
 }
