@@ -10,11 +10,24 @@
 <!--phần đầu trang-->
 <div class = "account" style="border-radius:2px; border:#900 solid #0CF; background-color:#900; color:#FFF; height:30px; margin-top: 9px" >
 	<a href = "accountconfig.php" style="margin-left: 900px; color: white"> Xin chào <strong>abcxyz</strong> <span style="margin-left: 20px">  kinh nghiệm:</span><a href= "#" style="color: white;margin-left: 8px; font-weight:bold">kinh nghiệm</p></a>
-</div><br />
+</div>
 
 <div class="forumHead">
 	<a href= "index.php" title="Trang chủ Góc sẻ chia"><img src="images/logo.png" width="50" height="50" alt="Trang chủ góc sẻ chia" /> <span style="font-size:40px; color:#0F0"><strong> Tình bạn</strong></span> và những câu chuyện .... rất ....</a><br />
     <a href="index.php" style="text-decoration:none">Trang chủ > <a href="friendsForum.php" style="text-decoration:none">Tình bạn</a>
+</div>
+
+<div class= "taskbarHead">
+	<table>
+    	<tr>
+        	<th><a href= "#">Tình bạn</a></th>
+            <th><a href= "#">Tình yêu</a></th>
+            <th><a href= "#">Gia đình</a></th>
+            <th><a href= "#">Cuộc sống</a></th>
+            <th><a href= "#">Học tập</a></th>
+            <th><a href= "#">Thầm kín</a></th>
+        </tr>
+    </table>
 </div>
 
 <div class= "mainTopic"  style="width: 100%">

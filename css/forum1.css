@@ -82,3 +82,14 @@
 	width: 300px;
 	border: 6px solid white;
 }
+.taskbarHead a{
+	text-decoration:none;
+	font-size:18px;
+	font-family:calibri;
+}
+.taskbarHead tr{
+	border:1px solid #666;
+}
+.taskbarHead th{
+	border:1px solid #666;
+}
