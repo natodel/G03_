@@ -52,12 +52,14 @@
 .topic table tfoot tr td{
 	border-radius: 5px;
 	border: 1px solid #6CF;
+	background-color: white;
 }
 .topic table tfoot tr th{
 	border-radius: 5px;
 	border: 1px solid #6CF;
 	height: 30px;
 	text-align:left;
+	background-color: white;
 }
 .topic table tfoot tr th span{
 	font-family:calibri;
@@ -92,4 +94,7 @@
 }
 .taskbarHead th{
 	border:1px solid #666;
+}
+.search{
+	margin-left: 80%;
 }

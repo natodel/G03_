@@ -6,7 +6,7 @@
 <title>Chuyên mục tình bạn</title>
 </head>
 
-<body>
+<body background="images/background for forum friend.png" to>
 <!--phần đầu trang-->
 <div class = "account" style="border-radius:2px; border:#900 solid #0CF; background-color:#900; color:#FFF; height:30px; margin-top: 9px" >
 	<a href = "accountconfig.php" style="margin-left: 900px; color: white"> Xin chào <strong>abcxyz</strong> <span style="margin-left: 20px">  kinh nghiệm:</span><a href= "#" style="color: white;margin-left: 8px; font-weight:bold">kinh nghiệm</p></a>
@@ -18,7 +18,7 @@
 </div>
 
 <div class= "taskbarHead">
-	<table>
+	<table style="background-color: purple; width: 100%">
     	<tr>
         	<th><a href= "#">Tình bạn</a></th>
             <th><a href= "#">Tình yêu</a></th>
@@ -30,6 +30,11 @@
     </table>
 </div>
 
+<div class = "search">
+	<form action="#" method="post"> <input type="text" name="search" />
+    <input type ="submit"  value="Tìm kiếm"  alt="Tìm kiếm"/>
+    </form>
+</div>
 <div class= "mainTopic"  style="width: 100%">
 	<div class="index" style="width:1000px">
         <div class="notice">
@@ -178,12 +183,7 @@
             </table>
         </div><br /> 
 	</div>
-    <div class="advertisment">
-	<a href="#"><img src=" http://suadienlanh.org/upload/product/sua_may_loc_nuoc_kangaroo_tai_ba_trieupho_hue.jpg" /></a>
-    <a href="#"><img src=" http://suadienlanh.org/upload/product/sua_may_loc_nuoc_kangaroo_tai_ba_trieupho_hue.jpg" /></a>
-    <a href="#"><img src=" http://suadienlanh.org/upload/product/sua_may_loc_nuoc_kangaroo_tai_ba_trieupho_hue.jpg" /></a>
-	</div>
-</div>
+    
     <div class="information" height=300px>
         <h1 style=" font-size:20px; border:3px">Thông tin liên hệ</h1>
         <p> Phát triển bởi....</p>
