@@ -1,0 +1,14 @@
+﻿@charset "utf-8";
+/* CSS Document */
+h1{
+    color: orange;
+	font-family:'Times New Roman';
+	margin-left:100px;
+    font-stretch: wider;
+}
+td{
+    border: groove;
+    width: 200px;
+}
+.changeinfo{
+}
