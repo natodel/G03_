@@ -11,7 +11,6 @@ session_start();
         <link rel="stylesheet" type="text/css" media="all" href="css/signupStyle.css" /> 
         <link rel="shortcut icon" href="images/logo.png" />	
         <link rel="stylesheet" type="text/css" media="all" href="css/containtSliders.css" />    
-        <script language="javascript" src="javascript/slide.js"></script>
         <script language="javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
         <script language="javascript" src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
         <script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
@@ -24,7 +23,7 @@ session_start();
         <header>
             <a href="index.php"><img class="logo" src="images/logo.png" alt="logo" title="Trang chủ Góc sẻ chia" /></a>	
             <?php
-            if (isset($_SESSION['user_curr'])) {
+            if (isset($_SESSION['current_user'])) {
                 print<<<EOP
                 <div class="loginOk">
                     <p id="nameDisplay">{$_SESSION['name']}</p>
@@ -132,7 +131,7 @@ EOP;
             <p><a href="#yourSpace" name="yourSpace" id="yourSpaceCaption" ><p>Góc của bạn</p></a>
             <div id="mainwrapper">
                 <!-- Image Caption 2 -->
-                <a href="giadinh.php">
+                <a href="forum.php?category=giadinh">
                     <div id="box-2" class="box">
                         <img id="image-2" src="images/2.jpg"/>
                         <span class="caption full-caption">
@@ -143,7 +142,7 @@ EOP;
                     </div>
                 </a>
                 <!-- Image Caption 3 -->
-                <a href="tinhyeu.php">
+                <a href="forum.php?category=tinhyeu">
                     <div id="box-3" class="box">
                         <img id="image-3" src="images/3.jpg"/>
                         <span class="caption fade-caption">
@@ -154,7 +153,7 @@ EOP;
                     </div>
                 </a>
                 <!-- Image Caption 4 -->
-                <a href="tinhban.php">
+                <a href="forum.php?category=tinhban">
                     <div id="box-4" class="box">
                         <img id="image-4" src="images/4.jpg"/>
                         <span class="caption slide-caption">
@@ -165,7 +164,7 @@ EOP;
                     </div>
                 </a>
                 <!-- Image Caption 5 -->
-                <a href="hoctapcongviec.php">
+                <a href="forum.php?category=hoctapcongviec">
                     <div id="box-5" class="box">
                         <div class="rotate">
                             <img id="image-5" src="images/5.jpg"/>
@@ -178,7 +177,7 @@ EOP;
                     </div>
                 </a>
                 <!-- Image Caption 6 -->
-                <a href="thamkin.php">
+                <a href="forum.php?category=thamkin">
                     <div id="box-6" class="box">
                         <img id="image-6" src="images/6.jpg"/>
                         <span class="caption scale-caption">
@@ -189,7 +188,7 @@ EOP;
                     </div>
                 </a>
                 <!-- Image Caption 1 -->
-                <a href="#">
+                <a href="giaitri.php">
                     <div id="box-1" class="box">
                         <img id="image-1" src="images/1.jpg"/>
                         <span class="caption simple-caption">
@@ -203,7 +202,7 @@ EOP;
         <br />
 
         <?php
-        if (!isset($_SESSION['user_curr'])) {
+        if (!isset($_SESSION['current_user'])) {
             print<<<EOP
         <div id="signupDiv" align="center" style="padding-bottom:400px;">
             <a name="signupAcc"></a>

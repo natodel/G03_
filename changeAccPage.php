@@ -23,8 +23,8 @@ session_start();
             <?php
             @mysql_connect("localhost", "root", "") or die('Can not connect to host');
             @mysql_select_db("data_userweb");
-            $user_curr = $_SESSION['user_curr'];
-            $refer = "select * from users where account='" . $user_curr . "'";
+            $current_user = $_SESSION['current_user'];
+            $refer = "select * from users where account='" . $current_user . "'";
             $query = mysql_query($refer);
             $row_curr = mysql_fetch_array($query);
 

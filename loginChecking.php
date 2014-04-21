@@ -40,7 +40,7 @@ EOP;
                 } else {
                     $row_curr = mysql_fetch_array($query);
                     session_start();
-                    $_SESSION['user_curr'] = $row_curr['account'];
+                    $_SESSION['current_user'] = $row_curr['account'];
                     $_SESSION['name'] = $row_curr['name'];
                     $_SESSION['level'] = $row_curr['level'];
                     if ($_SESSION['level'] == 2) {
