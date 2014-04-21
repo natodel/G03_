@@ -18,7 +18,7 @@ session_start();
         <script language="javascript" src="javascripts/jquery-ui-1.7.2.custom.min.js"></script>
     </head>
 
-    <body>
+    <body id="homePageBody">
         <!--===========START HEADER============-->
         <header>
             <a href="index.php"><img class="logo" src="images/logo.png" alt="logo" title="Trang chủ Góc sẻ chia" /></a>	
