@@ -22,14 +22,22 @@ session_start();
             <br/>
             <table id="displayTopics">
                 <?php
+                    if (!isset($_GET['page'])){
+                        $page = 0 ;
+                    }
+                    else $page = $_GET['page'];
+                    $itemsPerPage = 2;
                     if(!isset($_GET['category'])){
                         header('Location: index.php');
                     }
                     $category = $_GET['category'];
                     require_once('config.php');
-                    $query = "SELECT * from topics where cat_name='".$category."' order by date;";
-                    $result = mysql_query($query);
-                    $numbersOfTopic = mysql_num_rows($result);
+                    $query = "SELECT * from topics where cat_name='".$category."';";
+                    $resultAll = mysql_query($query);
+                    $numbersOfTopic = mysql_num_rows($resultAll);
+                    $numsOfPage = $numbersOfTopic/$itemsPerPage;
+                    $selectiveResult = mysql_query("SELECT * from topics where cat_name='".$category."' ORDER BY date DESC LIMIT ".$page*$itemsPerPage.",".$itemsPerPage." ;");
+                    $numsOfResult = mysql_num_rows($selectiveResult);
                 ?>
                 <tr>
                     <th colspan="3" >Tổng số bài viết <?php echo $numbersOfTopic ?>
@@ -42,15 +50,24 @@ session_start();
                     <th>Người gửi</th>
                 </tr>
                 <?php
-                if($numbersOfTopic!=0){
-                    while($topic = mysql_fetch_array($result)){
+                if($numsOfResult>0){
+                    while($topic = mysql_fetch_array($selectiveResult)){
                         echo "<tr><td><a href='discussion.php?topic=".$topic['id']."'>".$topic['subject']."</a></td>";
                         echo "<td>".$topic['date']."</td>";
                         echo "<td>".$topic['username']."</td></tr>";
                     }
                 }
-
+               
                 ?>
+                <tr style="text-align:center">
+                    <td colspan="3">
+                    <?php
+                        for ( $page = 0; $page <= $numsOfPage; $page ++ ){
+                            echo "<a href='forum.php?category={$category}&page={$page}'>{$page} - </a>";
+                        }
+                    ?>
+                    </td>
+                </tr>
             </table>
         </div>
         
