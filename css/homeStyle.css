@@ -5,12 +5,10 @@ body
     width:100%;
     margin:0;
     padding:0;
-    background-repeat:repeat;
+    background:url(../images/background.png) repeat;
     margin:auto;
 }
-#homePageBody{
-  background:url(../images/background.png) repeat;
-}
+
 #main
 {
     width:960px;

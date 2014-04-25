@@ -1,0 +1,8 @@
+#bodyWrapper
+{
+    width:960px;
+    min-height:500px;
+    padding:1px 0px;
+    margin:auto;
+    border:2px white solid;
+}
