@@ -45,7 +45,7 @@ session_start();
                     <th colspan="3" >Tổng số bài viết: <?php echo $numbersOfTopic ?>
                     <?php 
                         if($currentUser){
-                            echo "<a href='createNewTopic.php?category='".$category."'><img src='images/new_topic.png' alt='Viết bài'/></a>";
+                            echo "<a href='createNewTopic.php?category={$category}'><img src='images/new_topic.png' alt='Viết bài'/></a>";
                         }
                         else{
                             echo "<br/><i>Chỉ có thành viên mới có thể đăng bài mới.</i><br/>";
