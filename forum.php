@@ -18,11 +18,13 @@ session_start();
         <?php
         include('header.php');
         ?>
-        <div align="center">
+        <div align="center" id="bodyWrapper">
             <br/>
             <table id="displayTopics">
                 <?php
-                    if (!isset($_GET['page'])){
+                    if(isset($_SESSION['current_user'])) $currentUser = $_SESSION['current_user'];
+                    else $currentUser=null;
+                    if(!isset($_GET['page'])){
                         $page = 0 ;
                     }
                     else $page = $_GET['page'];
@@ -40,8 +42,16 @@ session_start();
                     $numsOfResult = mysql_num_rows($selectiveResult);
                 ?>
                 <tr>
-                    <th colspan="3" >Tổng số bài viết <?php echo $numbersOfTopic ?>
-                        <a href="createNewTopic.php?category=<?php echo $category; ?>"><img src="images/new_topic.png" alt="Viết bài"/></a>
+                    <th colspan="3" >Tổng số bài viết: <?php echo $numbersOfTopic ?>
+                    <?php 
+                        if($currentUser){
+                            echo "<a href='createNewTopic.php?category='".$category."'><img src='images/new_topic.png' alt='Viết bài'/></a>";
+                        }
+                        else{
+                            echo "<br/><i>Chỉ có thành viên mới có thể đăng bài mới.</i><br/>";
+                            echo "<a href='index.php#signupAcc'>Đăng kí</a>";
+                        }
+                    ?>
                     </th>
                 </tr>
                 <tr>
@@ -70,8 +80,5 @@ session_start();
                 </tr>
             </table>
         </div>
-        
-        
-        
     </body>
 </html>
