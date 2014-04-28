@@ -1,0 +1,263 @@
+a {text-decoration: none;}
+
+
+#bodyWrapper
+{
+	display:inline-block;
+	border: 1px solid #FFF;
+    width:960px;
+	margin: 0 0 200px 200px;
+	background: #100a0f;
+	min-height: 500px;
+	box-shadow:  0px 5px 5px 5px #ccc;
+}
+
+.linksTaskbar{
+	background:#FFF;
+	height: 30px
+}
+
+.linksTaskbar ul li{
+	float: left;
+	list-style:none;
+	text-align: center;
+	margin: 5px 5px 0 0;
+	background: #F00;
+}
+
+.linksTaskbar ul li span{
+	font-size:20px;
+}
+
+.linksTaskbar ul li a{
+	font-family: Times New Roman;
+	font-weight:600;
+	font-size: 20px;
+}
+
+.display{
+	width:800px;
+	float:left;
+	position:relative;
+	margin-top: 60px;
+}
+
+#currentTopics{
+	width: 600px;
+	position: relative;
+	float:left;	
+	min-height: 500px;
+	background: #0F0;
+	margin-top: 130px;
+}
+
+#markedTopics{
+	margin-left:650px;;
+	float:left;
+	position:relative;
+	width: 300px;
+	background:#0F0;
+	height: 500px;
+}
+
+#baiVietNoiBat{
+	background: #900;
+	color: #fff;
+	height: 50px;
+	border:none;
+	font-family: time new roman;
+	font-weight: bold;
+	font-size: 35px;
+}
+
+#markedTopicsIndex{
+	margin: 0 0 20px 20px;
+	float: right;
+	position: relative;
+	background:#00F;
+	width: 280px;
+}
+
+#markedTopics ul li{
+	list-style: none;
+	float:left;
+	position: relative;
+	}
+
+.displayTopics{
+	width: 900px;
+	margin-bottom:20px
+}
+
+.displayTopics li{
+	list-style:none;
+	text-align: left;
+}
+
+
+
+.story{
+	margin: 5px 5px 30px 30px ;
+	height: 160px;
+	}
+	
+#profilePicture{
+	position:relative;
+	float:left;
+	height:160px;
+	width:160px;	
+	background: #FFF;
+	border: 1px solid  #666;
+	border-left: none;
+}
+	
+#index{
+	position: relative;
+	float:left;
+	width: 400px;
+	background: #333;
+	text-align: center;
+	height: 160px;
+	border: 1px solid  #666;
+	color: #FFF;
+}
+
+#index ul li a{
+	font-size:30px;
+	font-weight:bold;
+	color:#00F;
+	}
+
+#index ul{
+	margin-left: 30px;
+	margin-top: 10px;
+}
+	
+ul{list-style:none;}a{text-decoration:none;}ul,li,a{margin:0;padding:0;}
+
+#container {
+  float: left;
+  position: relative;  	
+  width: 960px;
+  height: 200px;
+  border-bottom: 5px solid #00F;
+  box-shadow: 0 5px 0 0 #CCC;
+  background: url(../images/container-background.jpg);
+}
+#createATopic{
+	margin-top: 110px;
+	margin-left: 550px;
+	width:200px;
+	background:#0FF;
+	float: left;
+	position: relative;		
+}
+
+#nameOfCategory a{
+	color: #0000;
+	font-size: 20px;
+	font-family:time new roman;
+	}
+#nameOfCategory{
+	text-align: center;
+	background: #FFF;
+	height: 38px;
+	min-width: 90px;
+	border: 1px solid #444;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+	border-right: none;
+	
+}
+/***** menu *****/
+
+#navmenu {  
+  float:left;
+  border-radius: 7px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  margin-top:150px;
+  border: none;
+  
+}
+
+#listOfCategories{
+  height: 38px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  box-shadow:  2px 2px 5px #ccc;
+}
+
+#listOfCategories:hover {
+	background: #999;
+	height: 38px;
+	
+}
+
+#navmenu li {
+	font-weight:500;
+	font-family: tahoma;
+	margin-top:4px;
+	padding-top:4px;
+	list-style: none;
+  	float: left;
+ 	 position: relative;
+ 	 line-height: 30px; /* must match height of ul */
+}
+
+#navmenu li:hover span { color: #C89292; }
+/* icon font */
+#drop {
+  opacity: 0;
+  position: absolute;
+  top: 43px;
+  left: 0px;
+  width: 150px;
+
+  margin-left: -40px;
+ 
+  background: #FFF;
+}
+
+#drop li{
+	border-bottom: 1px solid #777;
+	margin: 0;
+	padding:0;
+}
+
+/* submenu links */
+#drop li a { 
+  color: #000;
+  font-size: 14px;
+  margin-left: 0px;
+  font-family: calibri;
+  font-weight: bold;
+}
+
+#drop li:hover{
+	background: #222;	
+}
+
+/* height of submenu links */
+#navmenu li:hover ul li {
+  height: 30px;
+  line-height: 30px;
+}
+
+/* submenu positioning */
+#navmenu li:hover ul { opacity: 1; }
+#drop li {
+	  list-style:none;
+	  float: none;
+	  position: static;
+	  height: 0;
+	  line-height: 0;
+	  background: none;
+}
+
+
+/* submenu transitions */
+#navmenu li { transition: all 0.2s; }
+#navmenu li a { transition: all 0.5s; }
+#drop { transition: all 1s; }
+#drop li { transition: height 0.5s; }

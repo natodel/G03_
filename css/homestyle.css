@@ -1,16 +1,10 @@
 /* CSS Document */
 body
 {
-    background-color: #CCCCCC;
-    width:100%;
-    margin:0;
-    padding:0;
-    background-repeat:repeat;
-    margin:auto;
+
+    background:url(../images/background.png) repeat;
 }
-#homePageBody{
-  background:url(../images/background.png) repeat;
-}
+
 #main
 {
     width:960px;
