@@ -86,12 +86,9 @@ session_start();
          </div>
         </div>
          
-        <div class="display">
-        	<div id="markedTopics">
-       			
-            </div>
-        
-          	<div id="currentTopics" > 
+        <table class="display">
+        	<tr>
+          	<th id="currentTopics"> 
                 <ul class="displayTopics">
                   	<li>      
                             <?php
@@ -107,10 +104,10 @@ session_start();
                            
                             ?>
                    </li>
-                   	<li style="text-align:center ; list-style: none">
+                   	<li style=" list-style: none">
                    
                     <?php /*nếu đang ở 1 page thì in số thứ thự page đó bằng màu khác*/				
-                        echo"<ul style='margin-left:850px'>";
+                        echo"<ul style='margin-left:450px'>";
                         for ( $page = 0; $page <= $numsOfPage; $page ++ ){
                            if($page == $currentPage){
                             echo "<li style='list-style:none; background: #777; float:left;position:relative;border: 1px solid #FFF; width:15px'><a href='forum.php?category={$category}&page={$page}' style='color: #FFF'>{$page} </a></li>";}
@@ -121,8 +118,12 @@ session_start();
                     ?>
                    </li>
                 </ul>
-            </div> 
-        </div> 
+            </th> 
+            
+            <th id="markedTopics">
+       		</th>
+        	</tr>
+        </table> 
               
     </div>
 </body>
