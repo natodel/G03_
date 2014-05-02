@@ -7,7 +7,7 @@ a {text-decoration: none;}
 	border: 1px solid #FFF;
     width:960px;
 	margin: 0 0 200px 200px;
-	background: #100a0f;
+	background: url(../images/wadinh.jpg) no-repeat;
 	min-height: 500px;
 	box-shadow:  0px 5px 5px 5px #ccc;
 }
@@ -21,8 +21,14 @@ a {text-decoration: none;}
 	float: left;
 	list-style:none;
 	text-align: center;
-	margin: 5px 5px 0 0;
-	background: #F00;
+	padding: 3px 3px;
+	
+}
+
+.linksTaskbar ul li:hover{
+	background: #0CF;
+	border-radius: 7px;	
+	opacity: 0.7;
 }
 
 .linksTaskbar ul li span{
@@ -47,14 +53,14 @@ a {text-decoration: none;}
 	position: relative;
 	float:left;	
 	min-height: 500px;
-	margin-top: 130px;
+	margin-top: 60px;
 }
 
 #markedTopics{
-	margin-top: 130px;
+	margin-top: 40px;
 	float:left;
 	position:relative;
-	width: 200px;
+	width: 300px;
 	height: 500px;
 }
 
@@ -62,19 +68,21 @@ th{
 	border: none;	
 }
 
-#markedTopicsIndex{
-	margin: 0 0 20px 20px;
-	float: right;
-	position: relative;
-	background:#00F;
+#markedTopics h1{
+	background: #900;
+	font-weight:bold;
+	color: #000;
+	font-family: Times New Roman;
+	font-size: 28px;
 	width: 280px;
+	opacity: 0.85;
+	margin-left: 20px;
+	height: 50px;
+	margin-top: 10px;
+	padding-top: 14px;
+	box-shadow: 0 2px 2px 0 #666;
+	
 }
-
-#markedTopics ul li{
-	list-style: none;
-	float:left;
-	position: relative;
-	}
 
 .displayTopics{
 	width: 600px;
@@ -88,14 +96,14 @@ th{
 
 .story{
 	margin: 5px 5px 30px 30px ;
-	height: 160px;
+	height: 130px;
 	}
 	
 #profilePicture{
 	position:relative;
 	float:left;
-	height:160px;
-	width:160px;	
+	height:130px;
+	width:130px;	
 	background: #FFF;
 	border: 1px solid  #666;
 	border-left: none;
@@ -107,9 +115,11 @@ th{
 	width: 400px;
 	background: #333;
 	text-align: center;
-	height: 160px;
+	height: 130px;
 	border: 1px solid  #666;
 	color: #FFF;
+	margin-left: 20px;
+	opacity: 0.8;
 }
 
 #index ul li a{
@@ -132,27 +142,26 @@ ul{list-style:none;}a{text-decoration:none;}ul,li,a{margin:0;padding:0;}
   height: 200px;
   border-bottom: 5px solid #00F;
   box-shadow: 0 5px 0 0 #CCC;
-  background: url(../images/container-background.jpg);
 }
 #createATopic{
-	margin-top: 110px;
+	margin-top: 100px;
 	margin-left: 550px;
-	width:200px;
-	background:#0FF;
+	width: 200px;
 	float: left;
-	position: relative;		
+	position: relative;	
+	color: #FFF;	
 }
 
 #nameOfCategory a{
-	color: #0000;
-	font-size: 20px;
+	color: #000;
+	font-size: 18px;
 	font-family:time new roman;
 	}
 #nameOfCategory{
 	text-align: center;
 	background: #FFF;
 	height: 38px;
-	min-width: 90px;
+	width: 90px;
 	border: 1px solid #444;
 	border-top-left-radius: 7px;
 	border-bottom-left-radius: 7px;
@@ -163,23 +172,31 @@ ul{list-style:none;}a{text-decoration:none;}ul,li,a{margin:0;padding:0;}
 
 #navmenu {  
   float:left;
-  border-radius: 7px;
-  margin-left: 30px;
-  margin-bottom: 10px;
-  margin-top:150px;
+  margin-bottom: 5px;
+  margin-top:155px;
   border: none;
   
 }
 
 #listOfCategories{
-  height: 38px;
-  border-top-right-radius: 7px;
-  border-bottom-right-radius: 7px;
-  box-shadow:  2px 2px 5px #ccc;
+	margin-top: 4px;
+	height: 38px;
+	border-radius: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: 1px solid #FFF;
+
+  
+}
+
+#listOfCategories a{
+	color: #fff;
+	font-weight: bold;
+	font-size: 12px;
 }
 
 #listOfCategories:hover {
-	background: #999;
+	background: url(../images/container-background.jpg);
 	height: 38px;
 	
 }
@@ -187,8 +204,7 @@ ul{list-style:none;}a{text-decoration:none;}ul,li,a{margin:0;padding:0;}
 #navmenu li {
 	font-weight:500;
 	font-family: tahoma;
-	margin-top:4px;
-	padding-top:4px;
+	margin-top:2px;
 	list-style: none;
   	float: left;
  	 position: relative;
@@ -202,10 +218,8 @@ ul{list-style:none;}a{text-decoration:none;}ul,li,a{margin:0;padding:0;}
   position: absolute;
   top: 43px;
   left: 0px;
-  width: 150px;
-
+  min-width: 150px;
   margin-left: -40px;
- 
   background: #FFF;
 }
 
@@ -247,7 +261,6 @@ ul{list-style:none;}a{text-decoration:none;}ul,li,a{margin:0;padding:0;}
 
 
 /* submenu transitions */
-#navmenu li { transition: all 0.2s; }
-#navmenu li a { transition: all 0.5s; }
+
 #drop { transition: all 1s; }
 #drop li { transition: height 0.5s; }
