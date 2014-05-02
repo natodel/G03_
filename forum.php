@@ -46,8 +46,8 @@ session_start();
         ?>
     <div class= "linksTaskbar">
         <ul>
-            <li><a href="#">Trang chủ<span>></span></a></li>
-            <li><a href="#">Diễn đàn<span></span></a></li>
+            <li><a href="#">Trang chủ<span style="padding-left: 5px"><img src="images/arrow.png" width=20px height=15px/></span></a></li>
+            <li><a href="#">Diễn đàn</a></li>
         </ul>
      </div>
      <br/>
@@ -121,6 +121,8 @@ session_start();
             </th> 
             
             <th id="markedTopics">
+            	<h1 align="center">Bài đăng nổi bật</h1>
+                
        		</th>
         	</tr>
         </table> 
