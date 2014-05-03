@@ -46,8 +46,8 @@ session_start();
         ?>
     <div class= "linksTaskbar">
         <ul>
-            <li><a href="#">Trang chủ<span style="padding-left: 5px"><img src="images/arrow.png" width=20px height=15px/></span></a></li>
-            <li><a href="#">Diễn đàn</a></li>
+            <li><a href="index.php">Trang chủ<span style="padding-left: 5px"><img src="images/arrow.png" width=20px height=15px/></span></a></li>
+            <li><?php echo "<a href='forum.php?category={$category}'>Diễn đàn</a>"?></li>
         </ul>
      </div>
      <br/>
@@ -107,7 +107,7 @@ session_start();
                    	<li style=" list-style: none">
                    
                     <?php /*nếu đang ở 1 page thì in số thứ thự page đó bằng màu khác*/				
-                        echo"<ul style='margin-left:450px'>";
+                        echo"<ul style='margin-left:250px'>";
                         for ( $page = 0; $page <= $numsOfPage; $page ++ ){
                            if($page == $currentPage){
                             echo "<li style='list-style:none; background: #777; float:left;position:relative;border: 1px solid #FFF; width:15px'><a href='forum.php?category={$category}&page={$page}' style='color: #FFF'>{$page} </a></li>";}
