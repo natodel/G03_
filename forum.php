@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,22 +10,21 @@ session_start();
         <link rel="shortcut icon" href="images/logo.png" />	
         <link href="css/forumStyle.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" type="text/css" media="all" href="css/containtSliders.css" />    
+        <script src="javascripts/smoothMenu.js" type="text/javascript"></script>
         <script src="javascripts/jquery-1.11.0.min.js" type="text/javascript"></script>
     </head>
-    <body>
-        <?php
-        include('header.php');
-        ?>
-        <div align="center" id="bodyWrapper">
-            <br/>
-            <table id="displayTopics">
-                <?php
+<body>
+    <?php
                     if(isset($_SESSION['current_user'])) $currentUser = $_SESSION['current_user'];
                     else $currentUser=null;
                     if(!isset($_GET['page'])){
                         $page = 0 ;
                     }
-                    else $page = $_GET['page'];
+                    else {
+						$page = $_GET['page'];
+						
+						}
+					$currentPage= $page;
                     $itemsPerPage = 2;
                     if(!isset($_GET['category'])){
                         header('Location: index.php');
@@ -40,45 +37,97 @@ session_start();
                     $numsOfPage = $numbersOfTopic/$itemsPerPage;
                     $selectiveResult = mysql_query("SELECT * from topics where cat_name='".$category."' ORDER BY date DESC LIMIT ".$page*$itemsPerPage.",".$itemsPerPage." ;");
                     $numsOfResult = mysql_num_rows($selectiveResult);
+					
                 ?>
-                <tr>
-                    <th colspan="3" >Tổng số bài viết: <?php echo $numbersOfTopic ?>
-                    <?php 
-                        if($currentUser){
-                            echo "<a href='createNewTopic.php?category={$category}'><img src='images/new_topic.png' alt='Viết bài'/></a>";
-                        }
-                        else{
-                            echo "<br/><i>Chỉ có thành viên mới có thể đăng bài mới.</i><br/>";
-                            echo "<a href='index.php#signupAcc'>Đăng kí</a>";
-                        }
-                    ?>
-                    </th>
-                </tr>
-                <tr>
-                    <th>Chủ đề</th>
-                    <th>Ngày đăng</th>
-                    <th>Người gửi</th>
-                </tr>
-                <?php
-                if($numsOfResult>0){
-                    while($topic = mysql_fetch_array($selectiveResult)){
-                        echo "<tr><td><a href='discussion.php?topic=".$topic['id']."'>".$topic['subject']."</a></td>";
-                        echo "<td>".$topic['date']."</td>";
-                        echo "<td>".$topic['username']."</td></tr>";
+        <?php
+        include('header.php');
+        ?>
+    <div class= "linksTaskbar">
+        <ul>
+            <li><a href="index.php">Trang chủ<span style="padding-left: 5px"><img src="images/arrow.png" width=20px height=15px/></span></a></li>
+            <li><?php echo "<a href='forum.php?category={$category}'>Diễn đàn</a>"?></li>
+        </ul>
+     </div>
+     <br/>
+    <div align="center" id="bodyWrapper">
+      	 <div id= "container">
+                <ul id="navmenu">
+                    <li id="nameOfCategory">
+						<?php
+								if($category=='giadinh') echo"<a href= 'forum.php?category=giadinh'>Gia đình</a>";
+								if($category=='tinhban')echo"<a href= 'forum.php?category=tinhban'>Tinh ban</a>";
+								if($category=='tinhyeu') echo"<a href='forum.php?catregory=tinhyeu'>Tinh yeu</a>";
+								
+                    	?>
+                    </li>
+                    <li id="listOfCategories" ><a href="#" id = "submenu"><img src="images/menu.png" width=40px height=40px/></a>
+                        <ul id = "drop" >
+                            <li><a href="forum.php?category=tinhban">Tình bạn</a></li>
+                            <li><a href="forum.php?category=tinhyeu">Tình yêu</a></li>
+                            <li><a href="forum.php?category=giadinh">Gia đình</a></li>
+                        </ul>
+                    </li>
+                </ul>
+   
+          <div id = "createATopic" >
+            Tổng số bài viết: <?php echo $numbersOfTopic ?>
+                <?php 
+                    if($currentUser){
+                        echo "<a href='createNewTopic.php?category={$category}'><img src='images/new_topic.png' alt='Viết bài'/></a>";
                     }
-                }
-               
+                    else{
+                        echo "<br/><i>Chỉ có thành viên mới có thể đăng bài mới.</i><br/>";
+                        echo "<a href='index.php#signupAcc'>Đăng kí</a>";
+                    }
                 ?>
-                <tr style="text-align:center">
-                    <td colspan="3">
-                    <?php
-                        for ( $page = 0; $page <= $numsOfPage; $page ++ ){
-                            echo "<a href='forum.php?category={$category}&page={$page}'>{$page} - </a>";
-                        }
-                    ?>
-                    </td>
-                </tr>
-            </table>
+               
+         </div>
         </div>
-    </body>
+         
+        <table class="display">
+        	<tr>
+          	<th id="currentTopics"> 
+                <ul class="displayTopics">
+                  	<li>      
+                            <?php
+                            if($numsOfResult>0){
+                                while($topic = mysql_fetch_array($selectiveResult)){
+                                    echo "<ul class='story'>";
+                                    echo "<div id= 'profilePicture'><img src= 'images/logo.png' width= 130px height=130px /></div>";
+                                    echo "<div id='index'><ul id='text'><li><a href='discussion.php?topic=".$topic['id']."'>".$topic['subject']."</a></li>";
+                                    echo "<li id='date'>".$topic['date']."</li>";
+                                    echo "<li id='userName'>".$topic['username']."</li></ul></div></ul><br />";
+                                }
+                            }
+                           
+                            ?>
+                   </li>
+                   	<li style=" list-style: none">
+                   
+                    <?php /*nếu đang ở 1 page thì in số thứ thự page đó bằng màu khác*/				
+                        echo"<ul style='margin-left:250px'>";
+                        for ( $page = 0; $page <= $numsOfPage; $page ++ ){
+                           if($page == $currentPage){
+                            echo "<li style='list-style:none; background: #777; float:left;position:relative;border: 1px solid #FFF; width:15px'><a href='forum.php?category={$category}&page={$page}' style='color: #FFF'>{$page} </a></li>";}
+                            else{ echo "<li style='list-style:none; float:left; border: 1px solid #cfc; width:15px'><a href='forum.php?category={$category}&page={$page}' style='color: #FFF'>{$page} </a></li>";
+                            }
+                        }
+                        echo"</ul>";
+                    ?>
+                   </li>
+                </ul>
+            </th> 
+            
+            <th id="markedTopics">
+            	<h1 align="center">Bài đăng nổi bật</h1>
+                
+       		</th>
+        	</tr>
+        </table> 
+              
+    </div>
+    <?php
+    include('footer.php');
+	?>
+</body>
 </html>

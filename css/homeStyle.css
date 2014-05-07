@@ -1,12 +1,8 @@
 /* CSS Document */
 body
 {
-    background-color: #CCCCCC;
-    width:100%;
-    margin:0;
-    padding:0;
+
     background:url(../images/background.png) repeat;
-    margin:auto;
 }
 
 #main
