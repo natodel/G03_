@@ -13,7 +13,6 @@ session_start();
         <link rel="stylesheet" type="text/css" media="all" href="css/containtSliders.css" />    
         <link href="css/discussionStyle.css" rel="stylesheet" type="text/css"/>
         <script src="javascripts/jquery-1.11.0.min.js" type="text/javascript"></script>
-     
     </head>
     <body>
         <?php
@@ -21,23 +20,15 @@ session_start();
         ?>
         <div id="mainWrapper" >
             <br/>
-            <div class= "index"  align="center">
-            	<div class="text">
-					<?php
-                    $topic = $_GET['topic'];
-                    require_once('config.php');
-                    $query = "SELECT body from topics where id='" . $topic . "';";
-                    $result = mysql_query($query);
-                    while ($topic = mysql_fetch_array($result)) {
-                        echo $topic['body'];
-                    }
-                    ?>
-                </div>
-            </div>
-            <br/>
-            
-            <div class="comments">
-            	
+            <?php
+            $topic = $_GET['topic'];
+            require_once('config.php');
+            $query = "SELECT body from topics where id='" . $topic . "';";
+            $result = mysql_query($query);
+            while ($topic = mysql_fetch_array($result)) {
+                echo $topic['body'];
+            }
+            ?>
         </div>
     </body>
 </html>
