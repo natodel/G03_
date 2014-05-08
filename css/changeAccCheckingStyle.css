@@ -1,0 +1,12 @@
+#main{
+    text-align:center;
+    font-size:20px;
+    color:green;
+    font-weight:700;
+}
+#main a:link{
+    color:yellow;
+}
+#main a:visited{
+    color:yellowgreen;
+}

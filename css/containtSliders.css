@@ -1,0 +1,90 @@
+#featured{ 
+    width:710px; 
+    padding-right:250px; 
+    position:relative; 
+    height:500px;
+    background:rgba(0,0,0,0.4);
+    border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+    -webkit-border-radius:10px;
+    overflow:hidden;
+}
+#thumb{
+    position:absolute; bottom:0; left:60px;
+    max-width:840px;
+    height:120px;
+    background:rgba(0,0,0,0.4);
+    overflow:hidden;
+    z-index:999999;
+}
+#leftArrow,#rightArrow{position:absolute;bottom:0; width:60px; height:120px; cursor:pointer; background:rgba(0,0,0,0.4);}
+#leftArrow{left:0; z-index:999999;}
+#rightArrow{right:0; z-index:999999;}
+#leftArrow IMG{float:left; margin-top:25px; margin-left:15px;}
+#rightArrow IMG{float:right; margin-top:25px; margin-right:15px;}
+#thumb ul{ 
+    float:left;
+    list-style:none;
+    padding:0; margin:0px; 
+    overflow:hidden;
+    position:relative;
+}
+#thumb ul li{ 
+    float:left;
+    width:280px;
+    height:100px;
+    margin-top:5px;
+    display:inline-block;
+    position:relative; 	
+}
+#thumb ul li img{ 
+    float:left; margin:11px 10px; 
+    background:#fff; 
+    padding:2px; 
+    border:1px solid #eee;
+}
+#thumb ul li p{
+    font-size:14px; font-family:Arial, Helvetica, sans-serif; 
+    line-height:15px; text-align:left; color:yellow; font-weight:700;
+    float:right; margin-right:10px; margin-top:10px;
+    width:105px; height:75px;
+}
+#thumb ul li span{ 
+    font-size:13px; font-family:Arial, Helvetica, sans-serif; 
+    line-height:18px; text-align:left; color:white; font-weight:700;
+}
+#thumb li a{ 
+    display:inline-block;
+    width:260px;
+    height:100px; text-decoration:none;
+    color:#333;  background:rgba(0,0,0,0.4); 
+    line-height:20px; outline:none;
+}
+
+#thumb ul li a:hover
+{
+    background:rgba(128,128,128,0.2);
+}
+#featured .ui-tabs-panel{ 
+    width:960px; height:400px; 
+    background:#999; position:relative;
+    border-radius:20px;
+    -moz-border-radius:20px;
+    -ms-border-radius:20px;
+    -o-border-radius:20px;
+    -webkit-border-radius:20px;
+
+}
+#featured .ui-tabs-panel IMG
+{
+    border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+    -webkit-border-radius:10px;
+}
+#featured .ui-tabs-hide{ 
+    display:none; 
+}
