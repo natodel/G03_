@@ -1,4 +1,32 @@
 #mainWrapper{
-    text-align: center;
-    min-height:800px;
+    min-height:900px;
+	background: #000;
+	margin-left: 150px; 
+	margin-right: 150px;
+	box-shadow: 0 5px 5px 5px #FFFFFF;
+	color: #FFF;
+}
+
+.index{
+	min-height: 600px;
+	background: url(../images/wadinh.jpg) no-repeat center top ;
+	margin-left: 40px;
+	margin-right: 40px;
+	padding-top:20px;
+	border-radius: 10px;
+	border: 1px solid #003;
+	box-shadow: 0 0 5px 5px #333333;
+}
+
+.text{
+	text-align: left;
+	margin-left: 180px;
+	margin-right: 180px;
+	margin-top:100px;
+	min-height:440px;
+	width: 600px;
+	min-height: 420px;
+	overflow-style:marquee-block;
+	padding: 5px 5px 5p 5px;
+
 }
