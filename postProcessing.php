@@ -35,6 +35,7 @@ session_start();
             $result = mysql_query($query);
             if($result){
                 echo "Đăng bài thành công!";
+                echo "<a href='javascript:history.go(-2)'>Quay lại</a>";
             }
             else{
                 echo mysql_error($result);

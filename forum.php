@@ -57,8 +57,8 @@ session_start();
                     <li id="nameOfCategory">
 						<?php
 								if($category=='giadinh') echo"<a href= 'forum.php?category=giadinh'>Gia đình</a>";
-								if($category=='tinhban')echo"<a href= 'forum.php?category=tinhban'>Tinh ban</a>";
-								if($category=='tinhyeu') echo"<a href='forum.php?catregory=tinhyeu'>Tinh yeu</a>";
+								if($category=='tinhban')echo"<a href= 'forum.php?category=tinhban'>Tình bạn</a>";
+								if($category=='tinhyeu') echo"<a href='forum.php?catregory=tinhyeu'>Tình yêu</a>";
 								
                     	?>
                     </li>
@@ -75,7 +75,7 @@ session_start();
             Tổng số bài viết: <?php echo $numbersOfTopic ?>
                 <?php 
                     if($currentUser){
-                        echo "<a href='createNewTopic.php?category={$category}'><img src='images/new_topic.png' alt='Viết bài'/></a>";
+                        echo "<a href='createNewTopic.php?category={$category}'>Đăng bài</a>";
                     }
                     else{
                         echo "<br/><i>Chỉ có thành viên mới có thể đăng bài mới.</i><br/>";
@@ -95,7 +95,7 @@ session_start();
                             if($numsOfResult>0){
                                 while($topic = mysql_fetch_array($selectiveResult)){
                                     echo "<ul class='story'>";
-                                    echo "<div id= 'profilePicture'><img src= 'images/logo.png' width= 130px height=130px /></div>";
+                                    //echo "<div id= 'profilePicture'><img src= 'images/logo.png' width= 130px height=130px /></div>";
                                     echo "<div id='index'><ul id='text'><li><a href='discussion.php?topic=".$topic['id']."'>".$topic['subject']."</a></li>";
                                     echo "<li id='date'>".$topic['date']."</li>";
                                     echo "<li id='userName'>".$topic['username']."</li></ul></div></ul><br />";
@@ -120,10 +120,10 @@ session_start();
                 </ul>
             </th> 
             
-            <th id="markedTopics">
+<!--             <th id="markedTopics">
             	<h1 align="center">Bài đăng nổi bật</h1>
                 
-       		</th>
+       		</th> -->
         	</tr>
         </table> 
               
