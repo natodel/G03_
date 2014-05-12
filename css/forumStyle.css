@@ -45,7 +45,7 @@ a {text-decoration: none;}
 	width:960px;
 	float:left;
 	position:relative;
-	margin-top: 60px;
+	margin-top: 0px;
 }
 
 #currentTopics{
@@ -53,14 +53,14 @@ a {text-decoration: none;}
 	position: relative;
 	float:left;	
 	min-height: 500px;
-	margin-top: 60px;
+	margin-top: 30px;
 }
 
 #markedTopics{
-	margin-top: 40px;
-	float:left;
+	margin-top: 30px;
+	float:right;
 	position:relative;
-	width: 300px;
+	width: 200px;
 	height: 500px;
 }
 
@@ -96,7 +96,7 @@ th{
 
 .story{
 	margin: 5px 5px 30px 30px ;
-	height: 130px;
+	height: 30px;
 	}
 	
 #profilePicture{
@@ -112,10 +112,10 @@ th{
 #index{
 	position: relative;
 	float:left;
-	width: 400px;
+	width: 600px;
 	background: #333;
 	text-align: center;
-	height: 130px;
+	height: 100px;
 	border: 1px solid  #666;
 	color: #FFF;
 	margin-left: 20px;
@@ -139,12 +139,12 @@ ul{list-style:none;}a{text-decoration:none;}ul,li,a{margin:0;padding:0;}
   float: left;
   position: relative;  	
   width: 960px;
-  height: 200px;
+  height: 100px;
   border-bottom: 5px solid #00F;
   box-shadow: 0 5px 0 0 #CCC;
 }
 #createATopic{
-	margin-top: 100px;
+	margin-top: 15px;
 	margin-left: 550px;
 	width: 200px;
 	float: left;
@@ -173,7 +173,7 @@ ul{list-style:none;}a{text-decoration:none;}ul,li,a{margin:0;padding:0;}
 #navmenu {  
   float:left;
   margin-bottom: 5px;
-  margin-top:155px;
+  margin:15px 0px 0px 15px;
   border: none;
   
 }

@@ -9,7 +9,7 @@
 
 .index{
 	min-height: 600px;
-	background: url(../images/wadinh.jpg) no-repeat center top ;
+	background: url(../images/wadinh.jpg) center top ;
 	margin-left: 40px;
 	margin-right: 40px;
 	padding-top:20px;
@@ -20,6 +20,7 @@
 
 .text{
 	text-align: left;
+	color: black;
 	margin-left: 180px;
 	margin-right: 180px;
 	margin-top:100px;
@@ -28,5 +29,4 @@
 	min-height: 420px;
 	overflow-style:marquee-block;
 	padding: 5px 5px 5p 5px;
-
 }
