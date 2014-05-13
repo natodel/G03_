@@ -51,26 +51,26 @@ session_start();
 								if($category=='tinhban')echo"<a href= 'forum.php?category=tinhban'>Tình bạn</a>";
 								if($category=='tinhyeu') echo"<a href='forum.php?catregory=tinhyeu'>Tình yêu</a>";
 								
-                    	?></li>
+                    	?>
+            </li>
         </ul>
      </div>
      <br/>
     <div align="center" id="bodyWrapper">
-      	 <div id= "container">
-                  
-          <div id = "createATopic" >
-            Tổng số bài viết: <?php echo $numbersOfTopic ?>
-                <?php 
-                    if($currentUser){
-                        echo "<a href='createNewTopic.php?category={$category}'><button class='btn-block'>Đăng bài</button></a>";
-                    }
-                    else{
-                        echo "<br/><i>Chỉ có thành viên mới có thể đăng bài mới.</i><br/>";
-                        echo "<a href='index.php#signupAcc'>Đăng kí</a>";
-                    }
-                ?>
-               
-         </div>
+      	 <div id= "container">       
+            <div id = "createATopic" >
+                Tổng số bài viết: <?php echo $numbersOfTopic ?>
+                    <?php 
+                        if($currentUser){
+                            echo "<a href='createNewTopic.php?category={$category}'><button class='btn-block'>Đăng bài</button></a>";
+                        }
+                        else{
+                            echo "<br/><i>Chỉ có thành viên mới có thể đăng bài mới.</i><br/>";
+                            echo "<a href='index.php#signupAcc'>Đăng kí</a>";
+                        }
+                    ?>
+                   
+             </div>
         </div>
          
         <table class="display">

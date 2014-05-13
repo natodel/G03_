@@ -44,12 +44,12 @@ session_start();
                     ?>
                     
                    <ul>
-                    <li class="userInformation"> 			                    
-                    <?php echo $_postUser;?>
-                    </li>
-                    <li class="story">
-					<?php echo $_bodyDisplay;?>
-					</li>
+                        <li class="userInformation"> 			                    
+                        	<?php echo $_postUser;?>
+                        </li>
+                        <li class="story">
+                       		<?php echo $_bodyDisplay;?>
+                        </li>
                     </ul>
              
             </div>
