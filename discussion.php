@@ -12,12 +12,6 @@ session_start();
         <link rel="shortcut icon" href="images/logo.png" />	
         <link rel="stylesheet" type="text/css" media="all" href="css/containtSliders.css" />    
         <link href="css/discussionStyle.css" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css.map">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css.map">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <script src="javascripts/jquery-1.11.0.min.js" type="text/javascript"></script>
      
      
