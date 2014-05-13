@@ -15,7 +15,7 @@
 	padding-top:20px;
 	border-radius: 10px;
 	border: 1px solid #003;
-	box-shadow: 0 0 5px 5px #333333;
+	box-shadow: 0 0 5px 5px #222;
 }
 
 .text{
@@ -29,4 +29,23 @@
 	min-height: 420px;
 	overflow-style:marquee-block;
 	padding: 5px 5px 5p 5px;
+}
+
+.userInformation{
+	width:200px;
+	position: relative;
+	float:left;
+	color:#00C;
+	font-weight: bold;
+	font-family: Time New Roman;
+	font-size: 24px;
+}
+
+.story{
+	padding-top: 40px;
+	text-align:left;
+	width: 680px;
+	position:relative;
+	margin-left: 60px;
+	color: #000;
 }

@@ -21,12 +21,10 @@ session_start();
     <div id="mainWrapper" >
         <br/>
         <div class= "index"  align="center">
-            <div class="text">
-
                 <?php
-                $topic = $_GET['topic'];
+                $topicID = $_GET['topic'];
                 require_once('config.php');
-                $query = "SELECT * from topics where id='" . $topic . "';";
+                $query = "SELECT * from topics where id='" . $topicID . "';";
                 $result = mysql_query($query);
                 while ($topic = mysql_fetch_array($result)) {
                     $_bodyDisplay = $topic['body'];
@@ -40,21 +38,31 @@ session_start();
                     $_postUser = $users['name'];
                 }
                 ?>
-                <h2><?php echo $_postUser; ?></h2>
-                
-                <p>
-                    <?php echo $_bodyDisplay; ?>
-                </p>
-                
-            </div>
-
-        </div>
-        <br/>
-
-        <div>
-        </div>
-
-
+                <div class="userInformation"><?php echo $_postUser; ?></div>
+                <div class="story"><?php echo $_bodyDisplay; ?> </div>
+         </div>
+         
+         <div class="comment">
+         	<form action="postComment.php" method="post">
+            	<textarea name="comment_body" placeholder="Bình luân nghiêm túc, cấm spam, cấm chửi tục.v.v." style="width:650px;height:50px;"></textarea>				<br />
+                <input type="hidden" name="topic" value="<?php echo $topicID ?>"/>	
+                <input type="submit" value="Gửi bình luận" />
+            </form>
+            <?php 
+				require_once('config.php');
+				$query = "SELECT * from comments where topic='".$topicID."';";
+				$resultAll = mysql_query($query);
+				$numbersOfComment = mysql_num_rows($resultAll);
+				if($numbersOfComment!=0){
+					while($comment = mysql_fetch_array($resultAll)){
+					echo $comment['username'];
+					echo $comment['body'];
+					echo "<br/>";
+					}
+				}
+				
+			?>
+         </div>
     </div>
 </body>
 </html>
