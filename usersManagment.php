@@ -1,7 +1,6 @@
-
-
 <?php
 session_start();
+if ((!isset($_SESSION['current_user'])) || ($_SESSION['level'] == 2)) exit();
 ?>
 <!DOCTYPE html>
 <html>
@@ -76,7 +75,7 @@ session_start();
                 }
                 ?>
             </table>
-           
+           <a href='javascript:history.go(-1)'> Quay lại </a>
         </div>
     </body>
 </html>

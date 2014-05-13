@@ -1,5 +1,6 @@
 <?php
 session_start();
+if ($_SESSION['level'] == 2) exit();
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,7 +34,6 @@ session_start();
                 <li><address><a href="index.php">Trang chủ</a></address></li>
                 <li><address><a href="usersManagment.php">Quản lý thành viên</a></address></li>
                 <li><address><a href="topicsManagment.php">Quản lý bài viết</a></address></li>
-                <li><address><a href="commentsManagment.php">Quản lý bình luận</a></address></li>
                 </li> 
             </ol>
             

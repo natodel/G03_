@@ -24,11 +24,14 @@ session_start();
             <a href="index.php"><img class="logo" src="images/logo.png" alt="logo" title="Trang chủ Góc sẻ chia" /></a>	
             <?php
             if (isset($_SESSION['current_user'])) {
+                if ($_SESSION['level'] == 1)
+                    $maneger = "</br><a href='Managment.php' id='managerPage'>Quản lý diễn đàn</a>";
+                else $maneger = "";
                 print<<<EOP
                 <div class="loginOk">
-                    <p id="nameDisplay">{$_SESSION['name']}</p>
-                    <a href="logOut.php" id="logoutLink">Đăng xuất</a><br/>
-                    <a href="changeAccPage.php" id="changeAccLink">Thay đổi thông tin tài khoản</a>
+                    <a href="logOut.php" id="logoutLink">Đăng xuất</a><inline id="nameDisplay">&Lt;{$_SESSION['name']}&Gt;</inline></br>
+                    <a href="changeAccPage.php" id="changeAccLink">Sửa tài khoản</a>
+                    {$maneger}
                 </div>
 EOP;
             } else {
@@ -77,21 +80,21 @@ EOP;
                         </li>
                         <li  id="nav-fragment-4">
                             <a href="#fragment-4">
-                                <img src="images/containtSlider/thumb/1.jpg" alt="" />
+                                <img src="images/containtSlider/thumb/4.jpg" alt="" />
                                 <p>Học tập:
                                     <span>Trượt ĐH, tôi như lâm vào bước đường cùng...</span></p>
                             </a>
                         </li>
                         <li  id="nav-fragment-5">
                             <a href="#fragment-5">
-                                <img src="images/containtSlider/thumb/2.jpg" alt="" />
+                                <img src="images/containtSlider/thumb/5.jpg" alt="" />
                                 <p>Xã hội:
                                     <span>Đạo đức của thanh niên ngày càng xuống cấp...</span></p>
                             </a>
                         </li>
                         <li  id="nav-fragment-6">
                             <a href="#fragment-6">
-                                <img src="images/containtSlider/thumb/3.jpg" alt="" />
+                                <img src="images/containtSlider/thumb/6.jpg" alt="" />
                                 <p>Thầm kín:
                                     <span>Tôi và anh ấy đã chót....</span></p>
                             </a>
@@ -113,13 +116,13 @@ EOP;
                     <img src="images/containtSlider/large/3.jpg" alt="" />
                 </div>
                 <div id="fragment-4" class="ui-tabs-panel ui-tabs-hide" style="">
-                    <img src="images/containtSlider/large/1.jpg" alt="" />
+                    <img src="images/containtSlider/large/4.jpg" alt="" />
                 </div>
                 <div id="fragment-5" class="ui-tabs-panel ui-tabs-hide" style="">
-                    <img src="images/containtSlider/large/2.jpg" alt="" />
+                    <img src="images/containtSlider/large/5.jpg" alt="" />
                 </div>
                 <div id="fragment-6" class="ui-tabs-panel ui-tabs-hide" style="">
-                    <img src="images/containtSlider/large/3.jpg" alt="" />
+                    <img src="images/containtSlider/large/6.jpg" alt="" />
                 </div>
                 <!--==========TRUE SIZE IMAGES SHOWCASE==========-->        
             </div>

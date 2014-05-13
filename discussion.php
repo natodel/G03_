@@ -13,48 +13,48 @@ session_start();
         <link rel="stylesheet" type="text/css" media="all" href="css/containtSliders.css" />    
         <link href="css/discussionStyle.css" rel="stylesheet" type="text/css"/>
         <script src="javascripts/jquery-1.11.0.min.js" type="text/javascript"></script>
-     
-     
     </head>
-    <body>
-        <?php
-        include('header.php');
-        ?>
-        <div id="mainWrapper" >
-            <br/>
-            <div class= "index"  align="center">
-            
-					<?php
-                    $topic = $_GET['topic'];
-                    require_once('config.php');
-                    $query = "SELECT * from topics where id='" . $topic . "';";
-                    $result = mysql_query($query);
-                    while ($topic = mysql_fetch_array($result)) {
-                        $_bodyDisplay = $topic['body'];
-						$_username = $topic['username'];
-                    }
-                    ?>
-                    <?php
-                    
-                    $userQuery = "SELECT name from users where account='" . $_username . "';";
-                    $userResult = mysql_query($userQuery);
-                    while ($users = mysql_fetch_array($userResult)) {
-                        $_postUser = $users['name'];
-                    }
-                    ?>
-                    
-                   <ul>
-                        <li class="userInformation"> 			                    
-                        	<?php echo $_postUser;?>
-                        </li>
-                        <li class="story">
-                       		<?php echo $_bodyDisplay;?>
-                        </li>
-                    </ul>
-             
+<body>
+    <?php
+    include('header.php');
+    ?>
+    <div id="mainWrapper" >
+        <br/>
+        <div class= "index"  align="center">
+            <div class="text">
+
+                <?php
+                $topic = $_GET['topic'];
+                require_once('config.php');
+                $query = "SELECT * from topics where id='" . $topic . "';";
+                $result = mysql_query($query);
+                while ($topic = mysql_fetch_array($result)) {
+                    $_bodyDisplay = $topic['body'];
+                    $_username = $topic['username'];
+                }
+                ?>
+                <?php
+                $userQuery = "SELECT name from users where account='" . $_username . "';";
+                $userResult = mysql_query($userQuery);
+                while ($users = mysql_fetch_array($userResult)) {
+                    $_postUser = $users['name'];
+                }
+                ?>
+                <h2><?php echo $_postUser; ?></h2>
+                
+                <p>
+                    <?php echo $_bodyDisplay; ?>
+                </p>
+                
             </div>
-            <br/>
-          
+
         </div>
-    </body>
+        <br/>
+
+        <div>
+        </div>
+
+
+    </div>
+</body>
 </html>

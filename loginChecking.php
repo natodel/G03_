@@ -43,12 +43,7 @@ EOP;
                     $_SESSION['current_user'] = $row_curr['account'];
                     $_SESSION['name'] = $row_curr['name'];
                     $_SESSION['level'] = $row_curr['level'];
-                    if ($_SESSION['level'] == 2) {
-                        header('Location: index.php');
-                        exit();
-                    } else {
-                        //page admin
-                    }
+                    header('Location: index.php');
                 }
             } else {
                 echo 'Nhập đủ tên đăng nhập và tài khoản :-p';

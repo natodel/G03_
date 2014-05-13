@@ -1,5 +1,6 @@
 <?php
 session_start();
+if ((!isset($_SESSION['current_user'])) || ($_SESSION['level'] == 2)) exit();
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,7 +40,7 @@ session_start();
             }
             ?>
             <table class="table table-striped table-bordered table-hover table-condensed table-responsive">
-                <caption><h2>Quản lý thành viên</h2></caption>
+                <caption><h2>Quản lý bài viết</h2></caption>
                 <tr>
                     <th>Tiêu đề</th>
                     <th>Người đăng</th>
@@ -67,7 +68,7 @@ session_start();
                 }
                 ?>
             </table>
-           
+           <a href='javascript:history.go(-1)'> Quay lại </a>
         </div>
     </body>
 </html>

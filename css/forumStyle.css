@@ -7,7 +7,7 @@ a {text-decoration: none;}
 	border: 1px solid #FFF;
     width:960px;
 	margin: 0 0 200px 200px;
-	background: url(../images/wadinh.png) no-repeat;
+	background: url(../images/wadinh.jpg) no-repeat;
 	min-height: 500px;
 	box-shadow:  0px 5px 5px 5px #ccc;
 }
@@ -145,7 +145,7 @@ ul{list-style:none;}a{text-decoration:none;}ul,li,a{margin:0;padding:0;}
 }
 #createATopic{
 	margin-top: 15px;
-	margin-left: 650px;
+	margin-left: 550px;
 	width: 200px;
 	float: left;
 	position: relative;	

@@ -2,7 +2,8 @@
 session_start();
 ?>
 <!DOCTYPE html>
-<html><head>
+<html>
+    <head>
         <meta charset="UTF-8">
         <title>Diễn đàn | Góc tâm sự - Lắng nghe những sẻ chia</title>
         <link rel="stylesheet" type="text/css" href="css/imgCapsFor4rum.css" />
@@ -46,31 +47,43 @@ session_start();
     <div class= "linksTaskbar">
         <ul>
             <li><a href="index.php">Trang chủ<span style="padding-left: 5px"><img src="images/arrow.png" width=20px height=15px/></span></a></li>
-            <li><?php
+            <li><?php echo "<a href='forum.php?category={$category}'>Diễn đàn</a>"?></li>
+        </ul>
+     </div>
+     <br/>
+    <div align="center" id="bodyWrapper">
+      	 <div id= "container">
+                <ul id="navmenu">
+                    <li id="nameOfCategory">
+						<?php
 								if($category=='giadinh') echo"<a href= 'forum.php?category=giadinh'>Gia đình</a>";
 								if($category=='tinhban')echo"<a href= 'forum.php?category=tinhban'>Tình bạn</a>";
 								if($category=='tinhyeu') echo"<a href='forum.php?catregory=tinhyeu'>Tình yêu</a>";
 								
                     	?>
-            </li>
-        </ul>
-     </div>
-     <br/>
-    <div align="center" id="bodyWrapper">
-      	 <div id= "container">       
-            <div id = "createATopic" >
-                Tổng số bài viết: <?php echo $numbersOfTopic ?>
-                    <?php 
-                        if($currentUser){
-                            echo "<a href='createNewTopic.php?category={$category}'><button class='btn-block'>Đăng bài</button></a>";
-                        }
-                        else{
-                            echo "<br/><i>Chỉ có thành viên mới có thể đăng bài mới.</i><br/>";
-                            echo "<a href='index.php#signupAcc'>Đăng kí</a>";
-                        }
-                    ?>
-                   
-             </div>
+                    </li>
+                    <li id="listOfCategories" ><a href="#" id = "submenu"><img src="images/menu.png" width=40px height=40px/></a>
+                        <ul id = "drop" >
+                            <li><a href="forum.php?category=tinhban">Tình bạn</a></li>
+                            <li><a href="forum.php?category=tinhyeu">Tình yêu</a></li>
+                            <li><a href="forum.php?category=giadinh">Gia đình</a></li>
+                        </ul>
+                    </li>
+                </ul>
+   
+          <div id = "createATopic" >
+            Tổng số bài viết: <?php echo $numbersOfTopic ?>
+                <?php 
+                    if($currentUser){
+                        echo "<a href='createNewTopic.php?category={$category}'>Đăng bài</a>";
+                    }
+                    else{
+                        echo "<br/><i>Chỉ có thành viên mới có thể đăng bài mới.</i><br/>";
+                        echo "<a href='index.php#signupAcc'>Đăng kí</a>";
+                    }
+                ?>
+               
+         </div>
         </div>
          
         <table class="display">
