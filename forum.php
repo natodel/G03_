@@ -2,8 +2,7 @@
 session_start();
 ?>
 <!DOCTYPE html>
-<html>
-    <head>
+<html><head>
         <meta charset="UTF-8">
         <title>Diễn đàn | Góc tâm sự - Lắng nghe những sẻ chia</title>
         <link rel="stylesheet" type="text/css" href="css/imgCapsFor4rum.css" />
@@ -12,6 +11,12 @@ session_start();
         <link rel="shortcut icon" href="images/logo.png" />	
         <link href="css/forumStyle.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" type="text/css" media="all" href="css/containtSliders.css" />    
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css.map">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css.map">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <script src="javascripts/smoothMenu.js" type="text/javascript"></script>
         <script src="javascripts/jquery-1.11.0.min.js" type="text/javascript"></script>
     </head>
@@ -75,7 +80,7 @@ session_start();
             Tổng số bài viết: <?php echo $numbersOfTopic ?>
                 <?php 
                     if($currentUser){
-                        echo "<a href='createNewTopic.php?category={$category}'>Đăng bài</a>";
+                        echo "<a href='createNewTopic.php?category={$category}'><button class='btn-block'>Đăng bài</button></a>";
                     }
                     else{
                         echo "<br/><i>Chỉ có thành viên mới có thể đăng bài mới.</i><br/>";

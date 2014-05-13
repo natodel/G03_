@@ -12,6 +12,12 @@ session_start();
         <link rel="shortcut icon" href="images/logo.png" />	
         <link rel="stylesheet" type="text/css" media="all" href="css/containtSliders.css" />    
         <link href="css/discussionStyle.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css.map">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css.map">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <script src="javascripts/jquery-1.11.0.min.js" type="text/javascript"></script>
      
     </head>
@@ -22,22 +28,38 @@ session_start();
         <div id="mainWrapper" >
             <br/>
             <div class= "index"  align="center">
-            	<div class="text">
+            
 					<?php
                     $topic = $_GET['topic'];
                     require_once('config.php');
-                    $query = "SELECT body from topics where id='" . $topic . "';";
+                    $query = "SELECT * from topics where id='" . $topic . "';";
                     $result = mysql_query($query);
                     while ($topic = mysql_fetch_array($result)) {
-                        echo $topic['body'];
+                        $_bodyDisplay = $topic['body'];
+						$_username = $topic['username'];
                     }
                     ?>
-                </div>
+                    <?php
+                    
+                    $userQuery = "SELECT name from users where account='" . $_username . "';";
+                    $userResult = mysql_query($userQuery);
+                    while ($users = mysql_fetch_array($userResult)) {
+                        $_postUser = $users['name'];
+                    }
+                    ?>
+                    
+                   <ul>
+                    <li class="userInformation"> 			                    
+                    <?php echo $_postUser;?>
+                    </li>
+                    <li class="story">
+					<?php echo $_bodyDisplay;?>
+					</li>
+                    </ul>
+             
             </div>
             <br/>
-            
-            <div class="comments">
-            	
+          
         </div>
     </body>
 </html>
