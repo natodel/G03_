@@ -16,6 +16,42 @@ session_start();
         <script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
         <script language="javascript" src="javascripts/containtSliders.js"></script>
         <script language="javascript" src="javascripts/jquery-ui-1.7.2.custom.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("a.delete").click(function(e) {
+                    if (!confirm('Are you sure?')) {
+                        e.preventDefault();
+                        return false;
+                    }
+                    return true;
+                });
+            });
+            $(document).ready(function() {
+                $('#Search').click(function() {
+                    $('#SearchDiv').toggle("slow");
+                });
+            });
+        </script>
+        <style>
+            #SearchDiv{
+                text-align:center;
+                line-height:2;
+                margin: 50px auto auto 450px;
+                width: 400px;
+                height: 200px;
+                z-index: 100;
+                position: fixed;
+                background-color:rgba(255, 255, 255, 0.9);
+                display:none;
+                border: 5px solid white;
+                color: white;
+            }
+            .SearchHeader{
+                width:100%;
+                height:50px;
+                background-color:#1a1a1a;
+            }
+        </style>
     </head>
 
     <body>
@@ -26,7 +62,8 @@ session_start();
             if (isset($_SESSION['current_user'])) {
                 if ($_SESSION['level'] == 1)
                     $maneger = "</br><a href='Managment.php' id='managerPage'>Quản lý diễn đàn</a>";
-                else $maneger = "";
+                else
+                    $maneger = "";
                 print<<<EOP
                 <div class="loginOk">
                     <a href="logOut.php" id="logoutLink">Đăng xuất</a><inline id="nameDisplay">&Lt;{$_SESSION['name']}&Gt;</inline></br>
@@ -46,8 +83,27 @@ EOP;
 EOP;
             }
             ?>
+            <button id="Search">Tìm kiếm bài viết</button>
         </header>
-
+        
+        <div id="SearchDiv">
+            <div class="SearchHeader"><b>ADD USER</b></div>
+            <form id="SearchForm" action="Search.php" method="POST">
+                <br />
+                <input type="text" name="title" placeholder="Tên bài viết" required />
+                <select name="category">
+                    <option value="#">-------Chủ đề-------</option>
+                    <option value="giadinh">Gia đình</option>
+                        <option value="tinhyeu">Tình yêu</option>
+                        <option value="tinhban">Tình bạn</option>
+                        <option value="hoctapcongviec">Học tập-công việc</option>
+                        <option value="thamkin">Thầm kín</option>
+                </select>
+                <br/>
+                <input type="submit" name="submit"  value="Tìm kiếm" />
+            </form>
+            <div id="messageResponse"></div>
+        </div>
         <hr id="middleLine" noshade />
         <!--===========END HEADER============-->
 
