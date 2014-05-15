@@ -43,11 +43,13 @@ session_start();
          </div>
          
          <div class="comment">
+         	<div class="createAComment" >
          	<form action="postComment.php" method="post">
-            	<textarea name="comment_body" placeholder="Bình luân nghiêm túc, cấm spam, cấm chửi tục.v.v." style="width:650px;height:50px;"></textarea>				<br />
+            	<textarea class="createACommentBody" placeholder="Bình luân nghiêm túc, cấm spam, cấm chửi tục.v.v." ></textarea>				<br />
                 <input type="hidden" name="topic" value="<?php echo $topicID ?>"/>	
-                <input type="submit" value="Gửi bình luận" />
+                <input class="commentButton" type="submit" value="Gửi bình luận" />
             </form>
+            </div>
             <?php 
 				require_once('config.php');
 				$query = "SELECT * from comments where topic='".$topicID."';";
@@ -55,12 +57,14 @@ session_start();
 				$numbersOfComment = mysql_num_rows($resultAll);
 				if($numbersOfComment!=0){
 					while($comment = mysql_fetch_array($resultAll)){
-					echo $comment['username'];
+					echo "<div class='UserComment'>";
+					echo "<span class='commentUser'>";
+					echo  $comment['username']."</br>";
+					echo "</span><span class='commentBody'>";
 					echo $comment['body'];
-					echo "<br/>";
+					echo "</span></br><span class='commentDate'>Bình luận lúc: ".$comment['date']."</span></div>";
 					}
 				}
-				
 			?>
          </div>
     </div>

@@ -84,6 +84,12 @@ th{
 	
 }
 
+.signUpToWrite{
+	border: 1px #FFF;
+	border-radius: 7px;
+	background: #0CC;
+}
+
 .displayTopics{
 	width: 600px;
 	margin-bottom:20px
@@ -145,7 +151,7 @@ ul{list-style:none;}a{text-decoration:none;}ul,li,a{margin:0;padding:0;}
 }
 #createATopic{
 	margin-top: 15px;
-	margin-left: 550px;
+	margin-left: 700px;
 	width: 200px;
 	float: left;
 	position: relative;	
