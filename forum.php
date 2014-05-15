@@ -87,7 +87,6 @@ session_start();
                             if($numsOfResult>0){
                                 while($topic = mysql_fetch_array($selectiveResult)){
                                     echo "<ul class='story'>";
-                                    //echo "<div id= 'profilePicture'><img src= 'images/logo.png' width= 130px height=130px /></div>";
                                     echo "<div id='index'><ul id='text'><li><a href='discussion.php?topic=".$topic['id']."'>".$topic['subject']."</a></li>";
                                     echo "<li id='date'>".$topic['date']."</li>";
                                     echo "<li id='userName'>".$topic['username']."</li></ul></div></ul><br />";

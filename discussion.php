@@ -45,7 +45,7 @@ session_start();
          <div class="comment">
          	<div class="createAComment" >
          	<form action="postComment.php" method="post">
-            	<textarea class="createACommentBody" placeholder="Bình luân nghiêm túc, cấm spam, cấm chửi tục.v.v." ></textarea>				<br />
+            	<textarea class="createACommentBody" name="comment_body" placeholder="Bình luân nghiêm túc, cấm spam, cấm chửi tục.v.v." ></textarea>				<br />
                 <input type="hidden" name="topic" value="<?php echo $topicID ?>"/>	
                 <input class="commentButton" type="submit" value="Gửi bình luận" />
             </form>
