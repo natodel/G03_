@@ -45,21 +45,21 @@ session_start();
          <div class="comment">
          	<div class="createAComment" >
          	<form action="postComment.php" method="post">
-            	<textarea class="createACommentBody" name="comment_body" placeholder="Bình luân nghiêm túc, cấm spam, cấm chửi tục.v.v." ></textarea>				<br />
+            	<textarea class="createACommentBody" name = "comment_body" placeholder="Bình luân..." ></textarea>				<br />
                 <input type="hidden" name="topic" value="<?php echo $topicID ?>"/>	
                 <input class="commentButton" type="submit" value="Gửi bình luận" />
             </form>
             </div>
             <?php 
 				require_once('config.php');
-				$query = "SELECT * from comments where topic='".$topicID."'";
+				$query = "SELECT * from comments where topic='".$topicID."';";
 				$resultAll = mysql_query($query);
 				$numbersOfComment = mysql_num_rows($resultAll);
 				if($numbersOfComment!=0){
 					while($comment = mysql_fetch_array($resultAll)){
 					echo "<div class='UserComment'>";
 					echo "<span class='commentUser'>";
-					echo  $comment['username']."</br>";
+					echo  $comment['name']."</br>";
 					echo "</span><span class='commentBody'>";
 					echo $comment['body'];
 					echo "</span></br><span class='commentDate'>Bình luận lúc: ".$comment['date']."</span></div>";

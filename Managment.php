@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SESSION['level'] == 2) exit();
+if ((!isset($_SESSION['current_user'])) || ($_SESSION['level'] == 2)) exit();
 ?>
 <!DOCTYPE html>
 <html>

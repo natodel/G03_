@@ -25,11 +25,12 @@ session_start();
             $comment_body = $_POST['comment_body'];
             require('config.php');
             $currentUser = $_SESSION['current_user'];
+            $currentUsername = $_SESSION['name'];
             $topic = $_POST['topic'];
             date_default_timezone_set('Asia/Ho_Chi_Minh');
                         $now = date('Y-m-d H:i:s');
 
-            $query = "INSERT INTO comments(topic,body,date,username) VALUES ('".$topic."','".$comment_body."','".$now."','".$currentUser."');";
+            $query = "INSERT INTO comments(topic,body,date,username,name) VALUES ('".$topic."','".$comment_body."','".$now."','".$currentUser."','".$currentUsername."');";
             $result = mysql_query($query);
             if($result){
                 echo "Đăng bài thành công!";

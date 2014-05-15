@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2014 at 03:57 PM
+-- Generation Time: May 15, 2014 at 07:46 PM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `data_userweb`
 --
+CREATE DATABASE IF NOT EXISTS `data_userweb` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `data_userweb`;
 
 -- --------------------------------------------------------
 
@@ -26,6 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `categories`
 --
 
+DROP TABLE IF EXISTS `categories`;
 CREATE TABLE IF NOT EXISTS `categories` (
   `id` tinyint(4) NOT NULL AUTO_INCREMENT,
   `cat_name` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -35,9 +38,34 @@ CREATE TABLE IF NOT EXISTS `categories` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `comments`
+--
+
+DROP TABLE IF EXISTS `comments`;
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `topic` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `body` text COLLATE utf8_unicode_ci NOT NULL,
+  `date` datetime NOT NULL,
+  `username` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=14 ;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `topic`, `body`, `date`, `username`, `name`) VALUES
+(13, '9', 'chuáº©n luÃ´n :v', '2014-05-16 00:41:48', 'ledotan', 'LÃª Äá»— TÃ¢n');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `topics`
 --
 
+DROP TABLE IF EXISTS `topics`;
 CREATE TABLE IF NOT EXISTS `topics` (
   `id` tinyint(4) NOT NULL AUTO_INCREMENT,
   `date` datetime DEFAULT NULL,
@@ -46,15 +74,15 @@ CREATE TABLE IF NOT EXISTS `topics` (
   `subject` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `body` text COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `topics`
 --
 
 INSERT INTO `topics` (`id`, `date`, `username`, `cat_name`, `subject`, `body`) VALUES
-(7, '2014-05-12 20:03:40', 'hson', 'giadinh', 'Nháº­t kÃ½ gia Ä‘Ã¬nh nhá» ', '<span style="font-family:Tahoma;font-size:10pt;">Láº§n Ä‘áº§u tiÃªn mÃ¬nh náº¯m tay má»™t ngÆ°á»i con gÃ¡i. Má»™t cáº£m giÃ¡c tháº­t má»m máº¡i, dá»‹u dÃ ng vÃ  áº¥m Ã¡p Ä‘áº¿n láº¡.NgÆ°á»i mÃ¬nh cá»© lÃ¢ng lÃ¢ng, bay bá»•ng nhÆ° thá»ƒ khÃ´ng cÃ²n trá»ng lÆ°á»£ng. Hai Ä‘á»©a láº·ng thinh, nhÆ°ng Ä‘Ã´i bÃ n tay Ä‘an tá»«ng ngÃ³n vÃ o nhau nhÆ° nÃ³i há»™ biáº¿t bao lá»i yÃªu thÆ°Æ¡ng tá»« lÃ¢u mÃ¬nh Ä‘Ã£ cháº¥t chá»©a trong lÃ²ng. HÃ¬nh nhÆ° cÅ©ng cáº£m nháº­n Ä‘Æ°á»£c Ä‘iá»u Ä‘Ã³ nÃªn bÃ n tay nhá» nháº¯n cá»§a em cÅ©ng ngoan ngoÃ£n náº±m yÃªn. Vui lÃ  tháº¿, nhÆ°ng sao mÃ¬nh váº«n tháº¥y lo lo. KhÃ´ng biáº¿t mÃ¬nh cÃ³ gÃ¬n giá»¯ Ä‘Æ°á»£c háº¡t máº§m cá»§a tÃ¬nh yÃªu vá»«a chá»›m hay khÃ´ng khi mÃ  nhá»¯ng khÃ³ khÄƒn vá» kinh táº¿ váº«n Ä‘ang chá»“ng cháº¥t lÃªn Ä‘Ã´i vai gáº§y cá»§a cha, trÃªn bÃ n tay xÆ°Æ¡ng cá»§a máº¹.</span>\r\n<p style="text-align:justify;">\r\n	<span style="font-family:Tahoma;font-size:10pt;">NgÃ y â€¦ thÃ¡ng â€¦ nÄƒm â€¦</span>\r\n</p>\r\n<p style="text-align:justify;">\r\n	<span style="font-family:Tahoma;font-size:10pt;">Váº­y lÃ  mÃ¬nh Ä‘Ã£ cÃ³ Ä‘Æ°á»£c táº¥m báº±ng tá»‘t nghiá»‡p, bá» cÃ´ng nhá»¯ng ngÃ y miá»‡t mÃ i Ä‘Ã¨n sÃ¡ch, cÃ²ng lÆ°ng má»i gá»‘i Ä‘áº¡p xe Ä‘áº¿n trÆ°á»ng. Vá»©t háº¿t má»i nhá»c nháº±n cá»§a quÃ¡ khá»©, mÃ¬nh vÃ  tá»¥i báº¡n Ä‘á»©a nÃ o cÅ©ng xÃºng xÃ­nh trong chiáº¿c Ã¡o cá»§a cÃ¡c cÃ´ cáº­u cá»­. KhÃ´ng vui sao Ä‘Æ°á»£c, vÃ¬ sao lá»›p Ã¡o nÃ y tháº¥m Ä‘áº«m biáº¿t bao má»“ hÃ´i vÃ  nÆ°á»›c máº¯t cá»§a báº£n thÃ¢n vÃ  gia Ä‘Ã¬nh. Cá»© vui Ä‘i! VÃ¬ ngÃ y mai nÃ y cÃ²n cÃ³ máº¥y dá»‹p gáº·p nhau vui váº» tháº¿ nÃ y Ä‘Ã¢u. Má»—i Ä‘á»©a má»™t phÆ°Æ¡ng trá»i, má»™t nghá» nghiá»‡p, thÃ nh cÃ´ng hay tháº¥t báº¡i Ä‘Ã¢u hay.</span>\r\n</p>\r\n<p style="text-align:justify;">\r\n	<span style="font-family:Tahoma;font-size:10pt;">NgÃ y â€¦ thÃ¡ng â€¦ nÄƒm â€¦</span>\r\n</p>\r\n<p style="text-align:justify;">\r\n	<span style="font-family:Tahoma;font-size:10pt;">TÃ¬nh yÃªu cá»§a chÃºng mÃ¬nh Ä‘Ã£ lá»›n dáº«n theo nÄƒm thÃ¡ng. ThoÃ¡ng Ä‘Ã³ mÃ  Ä‘Ã£ ba nÄƒm ká»ƒ tá»« ngÃ y anh cáº£m nháº­n Ä‘Æ°á»£c hÆ¡i áº¥m tá»« bÃ n tay em. Anh Ä‘Ã£ cÃ³ viá»‡c lÃ m á»•n Ä‘á»‹nh. Em cÅ©ng trÃ£i qua gáº§n bá»‘n nÄƒm trÃªn bá»¥c giáº£ng. Cha máº¹ hai bÃªn nhÃ  cÅ©ng biáº¿t chuyá»‡n tÃ¬nh cáº£m cá»§a chÃºng mÃ¬nh vÃ  cÅ©ng cho phÃ©p mÃ¬nh tÃ¬m hiá»ƒu nhau. Kinh táº¿ gia Ä‘Ã¬nh váº«n chÆ°a khÃ¡ giáº£, nhÆ°ng cÅ©ng khÃ´ng cÃ²n lÃ  ná»—i lo qÃºa lá»›n. Anh vui vÃ¬ háº¡t giá»‘ng tÃ¬nh cá»§a chÃºng mÃ¬nh ngÃ y náº£y ná»Ÿ vÃ  Ä‘Æ°á»£c chá»Ÿ che.</span>\r\n</p>\r\n<p style="text-align:justify;">\r\n	<span style="font-family:Tahoma;font-size:10pt;">NgÃ y â€¦ thÃ¡ng â€¦ nÄƒm â€¦</span>\r\n</p>\r\n<p style="text-align:justify;">\r\n	<span style="font-family:Tahoma;font-size:10pt;">Em lá»™ng láº«y trong chiáº¿c Ã¡o cÆ°á»›i mÃ u tráº¯ng tinh khÃ´i, khoÃ¡t tay anh tiáº¿n vá» sÃ¢n khÃ¢u trong nhá»¯ng trÃ ng vá»— tay, nhá»¯ng tiáº¿ng hÃ² reo, chÃºc tá»¥ng cá»§a báº¡n bÃ¨ vÃ  gia Ä‘Ã¬nh hai há». Tá»« Ä‘Ã¢y, chÃºng mÃ¬nh láº¡i cÃ ng siáº¿t cháº·t bÃ n tay Ä‘á»ƒ cÃ¹ng vun Ä‘áº¯p cho háº¡nh phÃºc cá»§a gia Ä‘Ã¬nh nhá».</span>\r\n</p>\r\n<p style="text-align:justify;">\r\n	<span style="font-family:Tahoma;font-size:10pt;">GiÃ¡ nhÆ° cÃ³ thá»ƒ Ä‘Æ°á»£c, anh muá»‘n khoáº£nh kháº¯c thiÃªng liÃªng nÃ y cá»© mÃ£i kÃ©o dÃ i.</span>\r\n</p>\r\n<p style="text-align:justify;">\r\n	<span style="font-family:Tahoma;font-size:10pt;">NgÃ y â€¦ thÃ¡ng â€¦ nÄƒm â€¦</span>\r\n</p>\r\n<p style="text-align:justify;">\r\n	<span style="font-family:Tahoma;font-size:10pt;">Ká»· niá»‡m 1 nÄƒm ngÃ y cÆ°á»›i. Nhá»¯ng ngÃ y qua lÃ  nhá»¯ng chuá»—i ngÃ y vÃ´ cÃ¹ng háº¡nh phÃºc. Anh vÃ  em cÃ¹ng lÃ m viá»‡c, há»c táº­p Ã  cÃ¹ng chia sáº» má»i buá»“n vui trong cÃ´ng viá»‡c. KhÃ´ng biáº¿t Ä‘á»‘i vá»›i cha máº¹ bÃªn nhÃ  anh cÃ³ Ä‘Æ°á»£c xem lÃ  â€œrá»ƒ tháº£oâ€ hay khÃ´ng? NhÆ°ng Ä‘á»‘i vá»›i cha máº¹ anh, em lÃ  con â€œdÃ¢u hiá»nâ€. Em khÃ´ng qÃºa giá»i dang trong chuyá»‡n báº¿p nÃºc, nhÆ°ng sá»± quan tÃ¢m, chia sáº» nhá»¯ng ná»•i buá»“n vui cá»§a gia Ä‘Ã¬nh nhÃ  chá»“ng vÃ  sá»± khÃ©o lÃ©o trong cÆ° xá»­ cá»§a em Ä‘Ã£ lÃ m cha máº¹ anh áº¥m lÃ²ng. Máº¹ thÆ°Æ¡ng em nhÆ° thÆ°Æ¡ng con trai cá»§a máº¹. Anh Ä‘á»c Ä‘Æ°á»£c trong máº¯t máº¹ nhá»¯ng niá»m vui pha láº«n chÃºt tá»± hÃ o.</span>\r\n</p>\r\n<p style="text-align:justify;">\r\n	<span style="font-family:Tahoma;font-size:10pt;">NgÃ y â€¦ thÃ¡ng â€¦ nÄƒm â€¦</span>\r\n</p>\r\n<p style="text-align:justify;">\r\n	<span style="font-family:Tahoma;font-size:10pt;">Váº­y lÃ  chÃºng mÃ¬nh sáº¯p cÃ³ em bÃ©. DÃ¹ Ä‘i láº¡i khÃ³ khÄƒn, nhÆ°ng em ráº¥t vui vÃ¬ sáº¯p Ä‘Æ°á»£c gáº·p con. BÃ¡c sá»¹ siÃªu Ã¢m bÃ¡o con chÃºng ta lÃ  con trai. CÃ³ láº½ váº­y mÃ  cu cáº­u cá»© quáº¥y máº¹ suá»‘t, háº¿t Ä‘áº¡p bÃªn nÃ y láº¡i mÃ¡y bÃªn kia. Tá»™i nghiá»‡p em! CÄƒn bá»‡nh viÃªm xoang mÃ£n cá»© lÃ¢u lÃ¢u láº¡i tÃ¡i phÃ¡t, váº­y mÃ  em cá»‘ chá»‹u Ä‘au, khÃ´ng uá»‘ng thuá»‘c, sá»£ áº£nh hÆ°á»Ÿng Ä‘áº¿n con. ThÆ°Æ¡ng em, anh cá»‘ gáº¯ng Ä‘á»¡ Ä‘áº§n má»i viá»‡c trong gia Ä‘Ã¬nh.</span>\r\n</p>\r\n<p style="text-align:justify;">\r\n	<span style="font-family:Tahoma;font-size:10pt;">NgÃ y â€¦ thÃ¡ng â€¦ nÄƒm â€¦</span>\r\n</p>\r\n<p style="text-align:justify;">\r\n	<span style="font-family:Tahoma;font-size:10pt;">Em chuyá»ƒn dáº¡. Anh cá»© lÃ³ng nga lÃ³ng ngÃ³ng. CÃ¡i giá» Ä‘á»“ Ä‘áº¡c chuáº©n bá»‹ sáºµn cho em Ä‘i sinh mÃ  cÅ©ng suÃ½t quÃªn. KhÃ´ng biáº¿t náº±m trong phÃ²ng sinh em nghÄ© gÃ¬. CÃ²n anh cáº£m tháº¥y mÃ¬nh vÃ´ dá»¥ng vÃ¬ khÃ´ng giÃºp gÃ¬ Ä‘Æ°á»£c cho em lÃºc nÃ y. LÃ²ng anh nhÆ° lá»­a Ä‘á»‘t, Ä‘i Ä‘i láº¡i láº¡i, Ä‘á»©ng ngá»“i khÃ´ng yÃªn. â€œNguyá»…n Thá»‹ PhÆ°Æ¡ng Tháº£o â€“ con trai â€“ 3,9kgâ€. Äá»c nhá»¯ng dÃ²ng chá»¯ cháº¡y trÃªn báº£ng Ä‘iá»‡n tá»­, anh má»«ng nhÆ° vá»«a trÃºt Ä‘Æ°á»£c gÃ¡nh náº·ng ngÃ n cÃ¢n. NhÆ°ng pháº£i Ä‘áº¿n lÃºc Ä‘Æ°á»£c vÃ o gáº·p em, gáº·p con, anh má»›i tháº­t sÆ° an lÃ²ng khi tháº¥y â€œmáº¹ trÃ²n con vuÃ´ngâ€.</span>\r\n</p>\r\n<p style="text-align:justify;">\r\n	<span style="font-family:Tahoma;font-size:10pt;">NgÃ y â€¦ thÃ¡ng â€¦ nÄƒm â€¦</span>\r\n</p>\r\n<p style="text-align:justify;">\r\n	<span style="font-family:Tahoma;font-size:10pt;">Cáº£ nhÃ  Ä‘áº·t tÃªn con lÃ  Bin. Con lÃ  niá»m tá»± hÃ o cá»§a ba máº¹ vÃ  cáº£ gia Ä‘Ã¬nh. Bin Äƒn ngoan, ngá»§ giá»i, bÃº sá»­a thÃ¬ khá»i chÃª (cháº¯c do ba lÃ  ngÆ°á»i má»›m cho Bin Äƒn Ä‘áº§u tiÃªn!). Ba máº¹ thÃ­ch nháº¥t lÃ  nhá»¯ng láº§n bÃ© con Ä‘i khÃ¡m sá»©c khá»e Ä‘á»‹nh ká»³. NhÃ¬n con Ä‘Æ°á»£c tÄƒng thÃªm trá»ng lÆ°á»£ng, gia tÄƒng thÃªm chiá»u cao mÃ  lÃ²ng ba máº¹ vui khÃ´n táº£. Cá»© tháº¿, con lá»›n lÃªn trong tÃ¬nh yÃªu cá»§a máº¹, sá»± Ä‘Ã¹m bá»c, che chá»Ÿ cá»§a ba vÃ  sá»± quan tÃ¢m, chÄƒm sÃ³c cá»§a Ã´ng bÃ .</span>\r\n</p>\r\n<p style="text-align:justify;">\r\n	<span style="font-family:Tahoma;font-size:10pt;">NgÃ y â€¦ thÃ¡ng â€¦ nÄƒm â€¦</span>\r\n</p>\r\n<p style="text-align:justify;">\r\n	<span style="font-family:Tahoma;font-size:10pt;">Bin Ä‘áº¿n tuá»•i Ä‘i nhÃ  tráº». Con hÃ¡o há»©c láº¯m. NhÆ°ng Ä‘áº¿n ngÃ y thá»© hai thÃ¬ con dá»©t khoÃ¡t khÃ´ng chá»‹u vÃ o lá»›p. Con khÃ³c nhÆ° mÆ°a, máº·t cho ba máº¹ vÃ  cÃ´ giÃ¡o háº¿t sá»©c dá»— dÃ nh Ä‘áº¿n dá»a náº¡t. Cuá»‘i cÃ¹ng ba máº¹ cÅ©ng pháº£i vá» Ä‘á»ƒ ká»‹p giá» Ä‘i lÃ m, máº·c cho con á»Ÿ láº¡i khÃ³c thÃ©t cÃ¹ng cÃ´ giÃ¡o. Ba máº¹ quay Ä‘i, xÃ³t xa láº¯m mÃ  khÃ´ng dÃ¡m nhÃ¬n láº¡i. Ba máº¹ biáº¿t con ngá»¡ ngÃ ng trÆ°á»›c nhá»¯ng Ä‘iá»u má»›i láº¡, nhÆ°ng biáº¿t lÃ m sao Ä‘Æ°á»£c, con khÃ´ng thá»ƒ khÃ¡c má»i ngÆ°á»i. Cá»‘ lÃªn con trai!.</span>\r\n</p>\r\n<p style="text-align:justify;">\r\n	<span style="font-family:Tahoma;font-size:10pt;">NgÃ y â€¦ thÃ¡ng â€¦ nÄƒm â€¦</span>\r\n</p>\r\n<p style="text-align:justify;">\r\n	<span style="font-family:Tahoma;font-size:10pt;">Váº­y lÃ  Bin chuáº©n bá»‹ vÃ o lá»›p má»™t. Má»™t mÃ´i trÆ°á»ng má»›i láº¡i chá» con phÃ­a trÆ°á»›c. Ba máº¹ lo láº¯m, vÃ¬ sinh cuá»‘i nÄƒm nÃªn so vá»›i cÃ¡c báº¡n cÃ¹ng tuá»•i con váº«n cÃ²n non ná»›t. Máº¹ dáº¡y con táº­p Ä‘á»c, táº­p viáº¿t, táº­p lÃ m tÃ³an, vá»‡ sinh cÃ¡ nhÃ¢n Ä‘á»ƒ con Ä‘á»¡ ngá»¡ ngÃ ng khi Ä‘áº¿n lá»›p. Ba máº¹ cÅ©ng an lÃ²ng Ä‘Ã´i chÃºt vÃ¬ con trai tiáº¿p thu nhá»¯ng Ä‘iá»u máº¹ dáº¡y ráº¥t nhanh. Con trai Ã ! TÃ¬nh yÃªu cá»§a ba máº¹ Ä‘Ã£ sinh ra con vÃ  Ä‘Ã£ lá»›n lÃªn cÃ¹ng con. Con lÃ  ngá»n lá»­a chiáº¿u sÃ¡ng vÃ  mang láº¡i hÆ¡i áº¥m cho gia Ä‘Ã¬nh nhá» bÃ© cá»§a chÃºng mÃ¬nh. Can Ä‘áº£m lÃªn con, dáº«u biáº¿t phÃ­a trÆ°á»›c lÃ  nhá»¯ng thá»­ thÃ¡ch Ä‘áº§u Ä‘á»i mÃ  con pháº£i vÆ°á»£t qua! Khi con cáº§n, bÃ n tay áº¥m Ã¡p cá»§a ba máº¹ sáºµn sÃ ng Ä‘Æ°a ra Ä‘á»ƒ con náº¯m láº¥y, bá»Ÿi vÃ¬ con lÃ  con trai cá»§a ba máº¹, vÃ  vÃ¬ chÃºng ta lÃ  má»™t gia Ä‘Ã¬nh mÃ , pháº£i khÃ´ng con!</span>\r\n</p>\r\n<div align="right">\r\n	<span class="newsAuthor">Huá»³nh Äá»©c ThÃ nh</span> \r\n</div>'),
-(8, '2014-05-12 20:08:29', 'ledotan', 'giadinh', 'Háº¡nh phÃºc cá»§a má»™t máº£nh Ä‘á»i', '<p>\r\n	- Máº¹ Æ¡i! â€“ ÄÃ´i máº¯t em má»Ÿ to má»™t cÃ¡ch ngÃ¢y thÆ¡.\r\n</p>\r\n<p>\r\n	- á»ª, máº¹ biáº¿t rá»“i. â€“ NgÆ°á»i máº¹ ngÆ°á»›c lÃªn nhÃ¬n em. â€“ Äá»£i máº¹ lÃ m xong máº¹ &nbsp;sáº½ náº¥u cÆ¡m con Äƒn nhÃ©.\r\n</p>\r\n<p>\r\n	- Dáº¡ vÃ¢ng áº¡! â€“ Em ngÃ¢y thÆ¡ cÆ°á»i rá»“i cháº¡y ra Ä‘áº§u hÃ¨ nháº·t rau.\r\n</p>\r\n<p>\r\n	Tiáº¿ng â€œDáº¡â€ ngÃ¢y thÆ¡ cá»§a em nhÆ° má»™t nhÃ¡t dao cáº¯t vÃ o lÃ²ng ngÆ°á»i máº¹. Máº¹ quay Ä‘i lau giá»t nÆ°á»›c máº¯t Ä‘ang cháº£y dÃ i trÃªn mÃ¡. Máº¹ thÆ°Æ¡ng em cÃ²n nhá» tuá»•i nhÆ°ng Ä‘Ã£ pháº£i bÆ°Æ¡n cháº£i, lo cho cuá»™c sá»‘ng cá»§a gia Ä‘Ã¬nh.\r\n</p>\r\n<p>\r\n	SÃ¡ng sá»›m em pháº£i theo anh hai Ä‘i nháº·t lon bia, anh Ä‘i trÆ°á»›c, cÃ²n em lÃ² dÃ² theo sau. Nháº·t Ä‘Æ°á»£c vá» nÃ o, anh Ä‘Æ°a cho em cáº§m háº¿t, cÃ²n mÃ¬nh thÃ¬ bá» Ä‘Ã³. Äi trÃªn Ä‘Æ°á»ng mÃ  gáº·p báº¡n bÃ¨, anh nÃ³ quay ngoáº¯t khÃ´ng nháº­n em trai mÃ¬nh. Váº­y nÃªn cháº£ cÃ³ Ä‘á»©a báº¡n nÃ o cá»§a tháº±ng anh biáº¿t máº·t em trai, cÅ©ng nhÆ° nhÃ  cá»§a tháº±ng anh á»Ÿ Ä‘Ã¢u. ÄÃ£ nhiá»u láº§n em há»i anh trai: â€œSao anh láº¡i&nbsp;khÃ´ng nháº­n em khi anh gáº·p báº¡n bÃ¨ váº­y anh hai?â€. Anh nÃ³ láº¡nh nháº¡t: â€œTao cÄƒm ghÃ©t cÃ¡i cáº£nh sá»‘ng nghÃ¨o nÃ n nhÆ° tháº¿ nÃ y. MÃ y khÃ´ng biáº¿t ngáº¡i Ã ? CÃ²n tao ngáº¡i láº¯m, ngáº¡i khi pháº£i nháº­n mÃ y lÃ m em trai.â€ . Em ko hiá»ƒu gÃ¬ háº¿t, em há»i máº¹: â€œMáº¹ Æ¡i, sao anh hai láº¡i ngáº¡i khi nháº­n con lÃ  em?â€. Láº¡i má»™t cÃ¢u há»i ngÃ¢y ngÃ´ ná»¯a cá»§a em lÃ m tim máº¹ Ä‘au tháº¯t láº¡i. Máº¹ khÃ´ng tráº£ lá»i, chá»‰ má»‰m cÆ°á»i buá»“n bÃ£ báº£o em: â€œSau nÃ y con sáº½ hiá»ƒu!â€\r\n</p>\r\n<p>\r\n	Táº¿t Ä‘áº¿n rá»“i, trong xÃ³m nhÃ  nÃ o nhÃ  náº¥y nhá»™n nhá»‹p khÃ´ng khÃ­ táº¿t, nhÃ  em váº¯ng hoe. Máº¹ em báº­n lÃ m lá»¥ng Ä‘á»ƒ cÃ³ tiá»n lo cho gia Ä‘Ã¬nh láº¥y Ä‘Ã¢u ra thá»i gian Ä‘á»ƒ mÃ  lo chuáº©n bá»‹ táº¿t cÆ¡ chá»©? NhÆ°ng em khÃ´ng há» buá»“n, ngÆ°á»£c láº¡i em cÃ²n vui khi giÃºp Ä‘á»¡ Ä‘Æ°á»£c máº¹. ÄÃªm Ä‘áº¿n, máº¹ Ã´m em vÃ o lÃ²ng, em thÃ¬ tháº§m há»i máº¹ trong tiáº¿ng ngÃ¡p dÃ i: â€œMáº¹ Æ¡i, con tháº¥y nhÃ  cÃ¡c báº¡n khÃ¡c Ä‘á»u to vÃ  Ä‘áº¹p, sao nhÃ  mÃ¬nh láº¡i nhá» váº­y máº¹? CÃ²n ná»¯a, cÃ¡c báº¡n khÃ¡c Ä‘á»u cÃ³ ba, sao con khÃ´ng cÃ³ váº­y áº¡?â€ . Máº¹ nÃ©n tiáº¿ng náº¥c vÃ o lÃ²ng, ngháº¹n ngÃ o nÃ³i vá»›i em: â€œRá»“i cha con sáº½ vá» vá»›i cÃ¡c con, nhÃ  mÃ¬nh sáº½ to nhÆ° nhÃ  cÃ¡c báº¡n.â€ â€œVáº­y bao giá» cha vá» váº­y áº¡?â€. â€œCÅ©ng sáº¯p rá»“i conâ€.\r\n</p>\r\n<p>\r\n	Máº¹ nÃ³i váº­y thÃ´i, chá»© thá»±c sá»± chÃ­nh máº¹ cÃ²n khÃ´ng biáº¿t khi nÃ o cha sáº½ vá», tháº­m chÃ­ cha sáº½ khÃ´ng bao giá» vá» ná»¯a. NghÄ© Ä‘áº¿n Ä‘Ã¢y, máº¹ dá»«ng láº¡i, máº¹ sá»£ nÆ°á»›c máº¯t tuÃ´n rÆ¡i vÃ  láº¡i báº¯t gáº·p cÃ¢u nÃ³i cá»§a em: â€œMáº¹ Ä‘á»«ng khÃ³c, bÃ© thÆ°Æ¡ng máº¹, anh hai thÆ°Æ¡ng máº¹ láº¯m.â€ Rá»“i dÃ¹ng bÃ n tay bÃ© nhá» lau Ä‘i giá»t nÆ°á»›c máº¯t cá»§a máº¹.\r\n</p>\r\n<p>\r\n	Gáº§n táº¿t rá»“i, máº¹ báº¯t Ä‘áº§u dá»n dáº¹p nhÃ  cá»­a, rá»“i ra chá»£ mua hoa quáº£ vá» cÃºng. Táº¿t nÄƒm nÃ o cá»§a em cÅ©ng Ä‘Æ¡n giáº£n, sÆ¡ sÃ i. KhÃ´ng biáº¿t ngÆ°á»i ngoÃ i nghÄ© sao, nhÆ°ng vá»›i em thÃ¬ táº¿t nÄƒm nÃ o cÅ©ng áº¥m cÃºng bÃªn máº¹. NÄƒm nay cÅ©ng khÃ´ng ngoáº¡i lá»‡. Äá»“ Ä‘áº¹p khÃ´ng cÃ³, Ä‘á»“ Äƒn ngon cÅ©ng khÃ´ng, nhÆ°ng em váº«n cáº£m tháº¥y háº¡nh phÃºc vá»›i nhá»¯ng mÃ³n Äƒn Ä‘Æ¡n giáº£n. ÄÃªm 29, anh Hai nÃ³i vá»›i máº¹: â€œTáº¿t nÄƒm nay máº¹ mua quáº§n Ã¡o má»›i cho con nhÃ©.â€ Máº¹ thá»Ÿ dÃ i: â€œTiá»n Ä‘Ã¢u mÃ  mua háº£ con? Em con sáº¯p vÃ o lá»›p 1 ná»¯a, máº¹ pháº£i cá»‘ gáº¯ng dÃ nh dá»¥m tiá»n cho nÃ³ chá»©!â€. Anh nÃ³ dá»—i máº¹: â€œMáº¹ thÆ°Æ¡ng nÃ³ hÆ¡n con chá»© gÃ¬? Máº¹ chá»‰ lo cho nÃ³ chá»© nÃ o cÃ³ thÆ°Æ¡ng con? Máº¹ tháº¥y chÃºng báº¡n con Ä‘á»©a nÃ o cÅ©ng cÃ³ quáº§n Ã¡o Ä‘áº¹p Ä‘á»ƒ máº·c ko, cÃ²n con nÄƒm nÃ o cÅ©ng Ã¡o tráº¯ng há»c sinh, máº¹ pháº£i biáº¿t chá»©?â€. Tháº±ng anh vÃ¹ng váº±ng Ä‘i ra khá»i cá»­a, quay láº¡i nhÃ¬n máº¹, cÃ¡i nhÃ¬n Ä‘áº§y trÃ¡ch mÃ³c: â€œCon ghÃ©t máº¹, cÄƒm cÃ¡i cáº£nh nghÃ¨o nÃ n. GiÃ¡ nhÆ° con sinh ra á»Ÿ 1 gia Ä‘Ã¬nh khÃ¡ giáº£ cÃ³ pháº£i tá»‘t hÆ¡n khÃ´ng?â€. Máº¹ im láº·ng khÃ´ng nÃ³i, nÆ°á»›c máº¯t cá»© láº·ng láº½ lÄƒn dÃ i trÃªn mÃ¡.\r\n</p>\r\n<p>\r\n	Tá»‘i Ä‘Ã³, em Ã´m láº¥y máº¹ vÃ  nÃ³i nhá» nháº¹: â€œCon khÃ´ng Ä‘i há»c Ä‘Ã¢u, con á»Ÿ nhÃ  giÃºp máº¹ cÅ©ng Ä‘Æ°á»£c. Äi há»c tá»‘n tiá»n láº¯m, máº¹ Ä‘á»ƒ tiá»n Ä‘Ã³ mua Ä‘á»“ cho anh Ä‘i.â€ Máº¹ cháº¡m vÃ o Ä‘Ã´i mÃ¡ bÃ© nhá», nhÃ¬n sÃ¢u vÃ o Ä‘Ã´i máº¯t long lanh trong sÃ¡ng cá»§a em. â€œMáº¹ láº¡i khÃ³c rá»“i, máº¹ Ä‘á»«ng khÃ³c.â€ Em cÆ°á»i vÃ  lau nÆ°á»›c máº¯t cho máº¹.\r\n</p>\r\n<p>\r\n	Tháº±ng anh Ä‘á»©ng ngoÃ i cá»­a, nghe háº¿t nhá»¯ng lá»i em nÃ³i, nÆ°á»›c máº¯t nÃ³ á»©a ra. TrÆ°á»›c giá», nÃ³ chá»‰ biáº¿t Ä‘ua Ä‘Ã²i vá»›i cÃ¡c báº¡n, lÃºc nÃ o cÅ©ng Ä‘Ã²i mua cÃ¡i nÃ y cÃ¡i kia mÃ  quÃªn máº¹ khÃ´ng cÃ³ tiá»n. NÃ³ cÃ²n khÃ´ng&nbsp;báº±ng em, khÃ´ng biáº¿t nghÄ©, khÃ´ng&nbsp;biáº¿t thÆ°Æ¡ng máº¹. NÃ³ muá»‘n xin lá»—i máº¹ quÃ¡, nhÆ°ng khÃ´ng&nbsp;biáº¿t lÃ m tháº¿ nÃ o, nÃ³ chá»‰ im láº·ng quay vÃ o giÆ°á»ng ngá»§. Sá»›m sau, nÃ³ dáº­y tÆ°á»›i rau, quÃ©t nhÃ , quÃ©t sÃ¢n, dá»n nhÃ , phá»¥ máº¹ Ä‘Ã³n Táº¿t. NÃ³ cÅ©ng khÃ´ng Ä‘Ã²i máº¹ mua quáº§n Ã¡o má»›i ná»¯a, cÅ©ng cháº³ng trÃ¡ch mÃ³c máº¹.\r\n</p>\r\n<p>\r\n	SÃ¡ng má»“ng 1, cáº£ nhÃ  dáº­y sá»›m Ä‘Ã³n Táº¿t, dÃ¹ nhÃ  nÃ³ khÃ´ng trang trÃ­ nhÃ , cÅ©ng khÃ´ng cÃ³ káº¹o bÃ¡nh gÃ¬ ngon, nhÆ°ng áº¥m Ã¡p vÃ´ cÃ¹ng. 3 máº¹ con em quay bÃªn chiáº¿c bÃ n nhá». â€œTÃ½, Quang Ä‘Ã¢u rá»“i? Máº¹ nÃ³ Ä‘Ã¢u rá»“i?â€ Tiáº¿ng ngÆ°á»i Ä‘Ã n Ã´ng vang vá»ng tá»« ngoÃ i cá»•ng. Anh em nÃ³ cháº¡y ra xem ai, em la to lÃªn, tháº±ng anh hÃ²a Ã¢m: â€œBA. A BA Vá»€ Rá»’I!!!â€ â€œá»ª, ba vá» rá»“i.â€ Ba Ã´m anh em nÃ³ vÃ o lÃ²ng. Máº¹ nÃ³ Ä‘á»©ng á»Ÿ cá»­a, rÆ°ng rÆ°ng nÆ°á»›c máº¯t. â€œÆ  máº¹ láº¡i khÃ³c ná»¯a Ã ? Ba vá» rá»“i mÃ , máº¹ cÆ°á»i lÃªn Ä‘i!!!â€ Máº¹ nÃ³ lau nÆ°á»›c máº¯t. â€ Máº¹ khÃ´ng khÃ³c ná»¯a Ä‘Ã¢u!â€ Máº¹ cÆ°á»i. â€œMáº¹ há»©a Ä‘i, khÃ´ng Ä‘Æ°á»£c khÃ³c ná»¯a nhÃ©.â€\r\n</p>\r\n<p>\r\n	Ba vá» rá»“i. Táº¿t nÄƒm nay cá»§a em sáº½ áº¥m Ã¡p hÆ¡n má»i nÄƒm ráº¥t nhiá»u. DÃ¹ nhÃ  em nghÃ¨o, nhÆ°ng cÃ³ ba, cÃ³ máº¹, cÃ³ anh hai, cÃ³ 1 gia Ä‘Ã¬nh háº¡nh phÃºc thÃ¬ em lÃ  ngÆ°á»i giÃ u cÃ³ nháº¥t tháº¿ giá»›i rá»“i.\r\n</p>\r\n<p style="text-align:right;">\r\n	<em>Webcamdong.com sÆ°u táº§m</em>\r\n</p>');
+(8, '2014-05-15 22:28:58', 'ledotan', 'giadinh', 'Háº­n tÃ¬nh vÃ¬ yÃªu pháº£i Sá»Ÿ Khanh', 'Em cÃ³ 1 tÃ¢m sá»± ráº¥t mong Ä‘Æ°á»£c chia sáº» cÃ¹ng chá»‹. Mong chá»‹ cho em 1 lá»i\r\nkhuyÃªn. Em Ä‘ang tháº¥t vá»ng vÃ  khÃ´ng biáº¿t mÃ¬nh nÃªn lÃ m gÃ¬ lÃºc nÃ y. &nbsp; &nbsp;\r\n&nbsp; &nbsp; &nbsp;Em nÄƒm nay cÃ²n khÃ¡ tráº», váº«n Ä‘ang lÃ  sinh viÃªn. TrÆ°á»›c Ä‘Ã¢y em\r\ncÃ³ quen 1 báº¡n trai, trong 1 thá»i gian cÅ©ng khÃ¡ dÃ i. Giá» tá»¥i em Ä‘Ã£ chia tay. Anh\r\nta trong máº¯t má»i ngÆ°á»i xung quanh lÃ  1 ngÆ°á»i tá»­ táº¿, Ä‘Ã ng hoÃ ng, nho nhÃ£ vÃ  Ä‘Ã¡ng\r\ntin cáº­y. VÃ¬ chia tay khi em váº«n cÃ²n thÆ°Æ¡ng anh ta, nÃªn em Ä‘Ã£ nÃ­u kÃ©o trong Ä‘au\r\nkhá»• vÃ  tuyá»‡t vá»ng. Em muá»‘n cÃ³ 1 cuá»™c gáº·p máº·t trá»±c tiáº¿p Ä‘á»ƒ nÃ³i chuyá»‡n cho rÃµ\r\nrÃ ng, nÃªn em dá»a anh ta sáº½ lÃ m Ä‘iá»u dáº¡i dá»™t, mong anh Ä‘áº¿n gáº·p em láº§n cuá»‘i Ä‘á»ƒ 2\r\nmáº·t 1 lá»i. Tá»« sau khi xáº£y ra mÃ¢u thuáº«n Ä‘á»‰nh Ä‘iá»ƒm anh ta luÃ´n trÃ¡nh em vÃ  khÃ´ng\r\ncÃ³ báº¥t cá»© lÃ­ do chÃ­nh Ä‘Ã¡ng nÃ o cho hÃ nh Ä‘á»™ng cá»§a mÃ¬nh. Anh ta nghe xong gá»i cho\r\nem vÃ i cuá»™c, em cá»‘ tÃ¬nh khÃ´ng nghe mÃ¡y, thÃ¬ anh ta máº·c&nbsp;'),
+(9, '2014-05-15 22:38:24', 'ledotan', 'tinhyeu', 'YÃªu anh Ä‘áº¿n quÃªn cáº£ em Ä‘i', '<p class="MsoNormal">\r\n	ThÃ¹y LÃ¢m báº­t dáº­y nhÆ° má»™t cÃ¡i lÃ²\r\nxÃ² khi tiáº¿ng chuÃ´ng Ä‘á»“ng há»“ bÃ¡o thá»©c vang lÃªn. CÃ´ quÃ½nh quÃ¡ng khi nhÃ¬n tháº¥y Ä‘Ã£\r\nlÃ  8h kÃ©m 15:<span class="apple-converted-space">&nbsp;</span>â€œCháº¿t tiá»‡t tháº­t, cÃ²n 15 phÃºt cho má»i viá»‡c náº¿u khÃ´ng muá»‘n Ä‘i lÃ m muá»™n vÃ  pháº£i\r\nlÃ m báº£n kiá»ƒm Ä‘iá»ƒmâ€.<span class="apple-converted-space">&nbsp;Nhanh nhÆ° chá»›p, ThÃ¹y LÃ¢m Ä‘Ã¡nh rÄƒng, rá»­a máº·t vÃ \r\nthay Ä‘á»“ chá»‰ trong vÃ²ngâ€¦ 5 phÃºt.</span>\r\n</p>');
 
 -- --------------------------------------------------------
 
@@ -62,6 +90,7 @@ INSERT INTO `topics` (`id`, `date`, `username`, `cat_name`, `subject`, `body`) V
 -- Table structure for table `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(50) NOT NULL AUTO_INCREMENT,
   `level` int(2) DEFAULT NULL,
@@ -71,15 +100,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `phone` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=31 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `level`, `account`, `password`, `name`, `email`, `phone`) VALUES
-(20, 2, 'hson', 'bdd6af02a7f1550789719aaec8c9e527', 'Nguyá»…n Há»“ng SÆ¡n', 'hson@gmail.com', '1234'),
-(26, 2, 'ledotan', 'de8e21490684d60d27e0627cdc4c83f0', 'LÃª Äá»— TÃ¢n', 'ledotan@gmail.com', '123456');
+(26, 1, 'ledotan', 'de8e21490684d60d27e0627cdc4c83f0', 'LÃª Äá»— TÃ¢n', 'ledotan@gmail.com', '123456'),
+(30, 2, 'anh', '5febda3d0ef90737a60de2fd7c6d7728', 'anh', 'anh@gmail.com', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
