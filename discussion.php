@@ -52,7 +52,7 @@ session_start();
             </div>
             <?php 
 				require_once('config.php');
-				$query = "SELECT * from comments where topic='".$topicID."';";
+				$query = "SELECT * from comments where topic='".$topicID."'";
 				$resultAll = mysql_query($query);
 				$numbersOfComment = mysql_num_rows($resultAll);
 				if($numbersOfComment!=0){
