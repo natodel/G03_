@@ -18,4 +18,4 @@ modules:
         - WebHelper
     config:
         PhpBrowser:
-            url: 'http://localhost:80/Project_SE/'
+            url: 'http://localhost:80/G03_/'
